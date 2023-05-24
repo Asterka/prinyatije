@@ -1,0 +1,12 @@
+.main-page{
+  display: grid;
+  grid-template-columns: repeat(3, 20%);
+  justify-content: space-around;
+  align-items: center;
+
+  &__card{
+    border: 1px solid black;
+    height: 80vh;
+  }
+
+}
