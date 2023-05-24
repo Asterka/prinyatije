@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainNavPageComponent } from './main-nav-page/main-nav-page.component';
 
 const routes: Routes = [
+
   {
     path: 'main',
     component: MainNavPageComponent,
