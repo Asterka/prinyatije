@@ -1,0 +1,23 @@
+.profile-main {
+  grid-template-columns: repeat(12, 1fr);
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    &__body {
+      display: flex;
+      justify-items: center;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.card {
+  width: 400px;
+  height: 100px;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #f3f3f3, #d6d1d1);
+  box-shadow: 7px 7px 14px #c1c1c1, -7px -7px 14px #ffffff;
+}

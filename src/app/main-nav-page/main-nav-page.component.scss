@@ -5,8 +5,11 @@
   align-items: center;
 
   &__card{
-    border: 1px solid black;
     height: 80vh;
+    border-radius: 50px;
+    background: #e3e3e3;
+    box-shadow: -30px 30px 60px #c1c1c1,
+                30px -30px 60px #ffffff;
   }
 
 }
