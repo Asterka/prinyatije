@@ -9,13 +9,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LoginFormComponent } from './login-page/login-form/login-form.component';
 import { MainNavPageComponent } from './main-nav-page/main-nav-page.component';
+import { ServicesPageComponent } from './services-page/services-page.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     LoginPageComponent,
     LoginFormComponent,
-    MainNavPageComponent
+    MainNavPageComponent,
+    ServicesPageComponent,
    ],
   imports: [
     CommonModule,
