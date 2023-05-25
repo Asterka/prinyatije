@@ -4,8 +4,12 @@ import { MainNavPageComponent } from './main-nav-page/main-nav-page.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: MainNavPageComponent,
+    path: 'login',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'registration',
+    loadChildren: () => import('./registration/registration.module').then((m) => m.RegistrationModule),
   },
   {
     path: 'profile',
@@ -20,6 +24,10 @@ const routes: Routes = [
       import('./services-page/services-page/services-page.module').then(
         (m) => m.ServicesPageModule
       ),
+  },
+  {
+    path: '',
+    component: MainNavPageComponent,
   },
   {
     path: '**',
