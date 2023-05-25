@@ -1,0 +1,20 @@
+.form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    &__login-button, &__registration-button {
+        display: grid;
+        justify-content: center;
+    }
+}
+
+:host::ng-deep {
+    .form__input {
+        border-radius: 10px;
+        border: none;
+        background: #ffffff;
+        box-shadow: inset -4px 4px 8px #dbdbdb,
+                    inset 4px -4px 8px #ffffff;
+    }
+}

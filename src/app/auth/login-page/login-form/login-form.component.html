@@ -1,0 +1,19 @@
+<section class="h-full">
+  <form class="form" style="row-gap: 15px;" [formGroup]="loginForm">
+    <h3 style="text-align: center;">Авторизация</h3>
+    <label>
+      <input class="form__input p-inputtext-lg" type="text" pInputText formControlName="login"/>
+    </label>
+
+    <label>
+      <input class="form__input p-inputtext-lg" type="text" pInputText formControlName="password"/>
+    </label>
+
+    <div class="form__login-button">
+      <button pButton label="Войти"></button>
+    </div>
+    <div class="form__registration-button">
+      <button pButton class="p-button-sm p-button-text" label="Регистрация" (click)="redirectToRegistration()"></button>
+    </div>
+  </form>
+</section>
