@@ -13,6 +13,9 @@ import { AddPetModalComponent } from '../modals/add-pet-modal/add-pet-modal.comp
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { CreatingServiceModalComponent } from '../modals/creating-service-modal/creating-service-modal.component';
+import { InputNumberModule } from 'primeng/inputnumber';
 import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
@@ -20,6 +23,7 @@ import { CalendarModule } from 'primeng/calendar';
     ProfilePageComponent,
     ChatProfileComponent,
     CardSectionsComponent,
+    CreatingServiceModalComponent,
     CardComponent,
     GTMTemplate,
     ProfileHeaderComponent,
@@ -35,6 +39,8 @@ import { CalendarModule } from 'primeng/calendar';
     ReactiveFormsModule,
     SelectButtonModule,
     InputTextModule,
+    InputSwitchModule,
+    InputNumberModule,
     CalendarModule
   ],
   exports: [

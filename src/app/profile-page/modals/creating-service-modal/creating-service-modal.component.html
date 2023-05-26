@@ -1,0 +1,45 @@
+<section>
+  <form class="modal" [formGroup]="creatingForm">
+    <span class="flex flex-column mt-2">
+      <label>Тип услуги<span style="color: red">*</span></label>
+      <input class="mt-1" pInputText type="text">
+    </span>
+    <span class="flex align-items-center mt-4">
+      <p-inputSwitch formControlName="fixPrice"></p-inputSwitch>
+      <label class="ml-2">Фиксированная цена</label>
+    </span>
+    <span class="flex flex-row justify-content-between mt-4 w-full" style="column-gap: 24px;">
+      <span class="flex flex-column w-full">
+        <label>Минимальная цена, руб</label>
+        <div class="w-full p-fluid">
+          <p-inputNumber class="mt-1" formControlName="minPrice"></p-inputNumber>
+        </div>
+      </span>
+      <span class="flex flex-column w-full">
+        <label>Макимальная цена, руб</label>
+        <div class="w-full p-fluid">
+          <p-inputNumber class="mt-1" formControlName="maxPrice"></p-inputNumber>
+        </div>
+      </span>
+    </span>
+  </form>
+</section>
+
+<section class="dynamic-modal__footer  w-full flex justify-content-end mt-6">
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Отмена"
+    class="p-button-outlined mr-3"
+    (click)="cancelAdding()"
+  ></button>
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Добавить"
+    [disabled]="!creatingForm.valid"
+    (click)="addJob()"
+  ></button>
+</section>

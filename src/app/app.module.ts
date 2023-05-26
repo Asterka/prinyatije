@@ -14,6 +14,7 @@ import { AuthModule } from './auth/auth.module';
 import { HTTP_INTERCEPTORS, HttpClientModule }   from '@angular/common/http';
 import { RegistrationModule } from './registration/registration.module';
 import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,11 @@ import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
     AuthModule,
     HttpClientModule,
     RegistrationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DynamicDialogModule
   ],
   providers: [
+    DialogService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     NetworkErrorResolverService
   ],
