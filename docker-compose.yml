@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  myservice:
+    image: asterka1/prinyatije:latest
+    # Replace 'username/repository:tag' with the actual image you want to use
+    # For example, 'nginx:latest'
+    # You can find the image name and tag on the Docker Hub page for your image
+
+    # Add any additional configuration for the service
+    ports:
+      - 8080:80  # Map container port 80 to host port 8080
+
+    volumes:
+      - ./data:/app/data  # Mount a local directory as a volume in the container
+
+    environment:
+      - ENV_VARIABLE=value  # Set environment variables for the container
+
+    # Add any other required configuration options for the service
