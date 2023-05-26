@@ -12,12 +12,17 @@ import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { AddPetModalComponent } from '../modals/add-pet-modal/add-pet-modal.component';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { CreatingServiceModalComponent } from '../modals/creating-service-modal/creating-service-modal.component';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
     ProfilePageComponent,
     ChatProfileComponent,
     CardSectionsComponent,
+    CreatingServiceModalComponent,
     CardComponent,
     GTMTemplate,
     ProfileHeaderComponent,
@@ -31,7 +36,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SelectButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    SelectButtonModule
+    SelectButtonModule,
+    InputTextModule,
+    InputSwitchModule,
+    InputNumberModule,
   ],
   exports: [
     ProfilePageComponent,

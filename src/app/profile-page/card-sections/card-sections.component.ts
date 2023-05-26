@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { AddPetModalComponent } from '../modals/add-pet-modal/add-pet-modal.component';
+import { CreatingServiceModalComponent } from '../modals/creating-service-modal/creating-service-modal.component';
 
 interface Card {
   imageSrc?: string;
@@ -27,4 +28,12 @@ export class CardSectionsComponent {
       styleClass: 'modal-M',
     });
   }
+
+  openCreatingModal() {
+    let modal = this.dialogService.open(CreatingServiceModalComponent, {
+      header: 'Добавление услуги',
+      styleClass: 'modal-M',
+    })
+  }
+
 }
