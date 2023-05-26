@@ -1,0 +1,9 @@
+::-webkit-scrollbar {
+  width: 12px;
+  -webkit-appearance: none;
+  &-thumb {
+    background-color: rgba(108, 121, 119, 0.44);
+    border: 2px solid #fff;
+    border-radius: 1rem;
+  }
+}
