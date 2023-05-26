@@ -11,13 +11,7 @@
  */
 
 
-export interface PetCreateUpdateDto { 
-    name: string;
-    breed: string;
-    sex: string;
-    avatarUri?: string;
-    dateOfBirth?: string;
-    coat?: string;
-    coatVariety?: string;
+export interface FileDto { 
+    uri?: string;
 }
 

@@ -7,6 +7,7 @@ import { RegistrationRoutingModule } from './registration-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { InputTextModule } from 'primeng/inputtext';
     RouterModule,
     RegistrationRoutingModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    PasswordModule
   ],
   declarations: [RegistrationPageComponent, RegistrationFormComponent]
 })
