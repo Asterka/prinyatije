@@ -16,6 +16,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { CreatingServiceModalComponent } from '../modals/creating-service-modal/creating-service-modal.component';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     InputTextModule,
     InputSwitchModule,
     InputNumberModule,
+    CalendarModule
   ],
   exports: [
     ProfilePageComponent,

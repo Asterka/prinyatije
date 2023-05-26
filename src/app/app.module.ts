@@ -1,3 +1,4 @@
+import { NetworkErrorResolverService } from './shared/services/network-error-resolver.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,6 +39,7 @@ import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
   providers: [
     DialogService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    NetworkErrorResolverService
   ],
   bootstrap: [AppComponent]
 })

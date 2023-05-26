@@ -24,7 +24,7 @@ export class CardSectionsComponent {
 
   show() {
     this.ref = this.dialogService.open(AddPetModalComponent, {
-      header: 'Select a Product',
+      header: 'Добавление питомца',
       styleClass: 'modal-M',
     });
   }

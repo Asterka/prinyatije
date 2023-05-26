@@ -8,7 +8,28 @@
     optionLabel="label"
     optionValue="value"
   ></p-selectButton>
-  <label>
-    <input class="form__input p-inputtext-lg" type="text" pInputText formControlName="password"/>
-  </label>
+
+  <span class="w-full flex justify-content-between" style="gap: 1rem">
+    <span class="flex flex-column flex-grow-1 mt-2">
+      <label class="text-sm text-normal">Имя</label>
+      <input class="form__input p-inputtext mt-2" type="text" pInputText/>
+    </span>
+    <span class="flex flex-column flex-grow-1 mt-2">
+      <label class="text-sm text-normal">Название</label>
+      <input class="form__input p-inputtext mt-2" type="text" pInputText/>
+    </span>
+  </span>
+
+  <span class="w-full flex justify-content-between" style="gap: 1rem">
+    <span class="flex flex-column flex-grow-1 mt-2">
+      <label class="text-sm text-normal">Порода</label>
+      <input class="form__input p-inputtext mt-2" type="text" pInputText/>
+    </span>
+    <span class="flex flex-column justify-content-between flex-grow-1 mt-2">
+      <label class="text-sm text-normal">День рождения</label>
+      <p-calendar appendTo="body" class="p-fluid"></p-calendar>
+    </span>
+  </span>
+
+
 </form>
