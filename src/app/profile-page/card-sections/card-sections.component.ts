@@ -1,7 +1,6 @@
-import {
-  Component,
-  Input,
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { AddPetModalComponent } from '../modals/add-pet-modal/add-pet-modal.component';
 
 interface Card {
   imageSrc?: string;
@@ -14,9 +13,18 @@ interface Card {
 })
 export class CardSectionsComponent {
   _cardData: Card = {};
+  ref?: DynamicDialogRef;
 
   @Input() set data(value: Card) {
     this._cardData = value;
   }
 
+  constructor(public dialogService: DialogService) {}
+
+  show() {
+    this.ref = this.dialogService.open(AddPetModalComponent, {
+      header: 'Select a Product',
+      styleClass: 'modal-M',
+    });
+  }
 }

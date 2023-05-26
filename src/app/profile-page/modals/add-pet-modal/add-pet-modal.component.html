@@ -1,0 +1,14 @@
+<form [formGroup]="addForm">
+  <p-selectButton
+    [options]="[
+      { value: 'male', label: 'Мальчик' },
+      { value: 'female', label: 'Девочка' }
+    ]"
+    formControlName="sex"
+    optionLabel="label"
+    optionValue="value"
+  ></p-selectButton>
+  <label>
+    <input class="form__input p-inputtext-lg" type="text" pInputText formControlName="password"/>
+  </label>
+</form>
