@@ -1,0 +1,47 @@
+:host::ng-deep {
+  .p-tabview .p-tabview-panels {
+    background-color: transparent;
+  }
+
+  .p-tabview .p-tabview-nav {
+    background-color: transparent;
+  }
+
+  .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    background-color: transparent;
+    color: #8a61ff;
+    margin: 1rem 1rem;
+  }
+
+  .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    border: none;
+    border-radius: 50px;
+  }
+
+  .p-tabview
+    .p-tabview-nav
+    li:not(.p-highlight):not(.p-disabled):hover
+    .p-tabview-nav-link {
+    background-color: transparent;
+    color: #8a61ff;
+    box-shadow: inset -8px -6px 15px #ffffff,
+      inset 3px 3px 7px rgba(166, 173, 213, 0.4);
+  }
+
+  .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    border-color: unset;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset -8px -6px 15px #ffffff,
+      inset 3px 3px 7px rgba(166, 173, 213, 0.4);
+    border-radius: 1rem;
+  }
+
+  .p-tabview-nav-container {
+    box-shadow: -8px -6px 15px #ffffff, 3px 3px 7px rgba(166, 173, 213, 0.4);
+    border-radius: 16px;
+  }
+  .p-tabview .p-tabview-panels{
+    padding: 0;
+  }
+}

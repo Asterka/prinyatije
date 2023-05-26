@@ -9,13 +9,23 @@ const routes: Routes = [
   },
   {
     path: 'registration',
-    loadChildren: () => import('./registration/registration.module').then((m) => m.RegistrationModule),
+    loadChildren: () =>
+      import('./registration/registration.module').then(
+        (m) => m.RegistrationModule
+      ),
   },
   {
     path: 'profile',
     loadChildren: () =>
       import('./profile-page/profile-page/profile-page.module').then(
         (m) => m.ProfilePageModule
+      ),
+  },
+  {
+    path: 'petProfile',
+    loadChildren: () =>
+      import('./pet-profile/profile-page/profile-page.module').then(
+        (m) => m.PetProfilePageModule
       ),
   },
   {

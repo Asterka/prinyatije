@@ -1,0 +1,15 @@
+.p-grid{
+  display: grid;
+  grid-template-columns: 3fr 7fr 2fr;
+}
+
+.main-section{
+  padding: 80px;
+  padding-top: 60px;
+  overflow: scroll;
+}
+
+.main-page{
+  display: grid;
+  grid-template-rows: min-content auto;
+}

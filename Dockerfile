@@ -9,5 +9,5 @@ RUN ng build --optimization=false
 
 FROM harbor.stageogip.ru/hub/library/nginx:1.21.6
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/dist/rga-well /usr/share/nginx/html
+COPY --from=build /app/dist/prinyatije /usr/share/nginx/html
 CMD ["nginx", "-g", "daemon off;"]
