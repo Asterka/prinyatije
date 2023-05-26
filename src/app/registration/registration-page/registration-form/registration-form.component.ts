@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegistrationService } from '../../services/registration.service';
 import { UserCreateDto } from 'src/app/openapi';
-import { RegistrationForm } from './registration-form.enum';
 import { PASSWORD_PATTERN } from 'src/app/shared/patterns/password-pattern';
 
 @Component({
@@ -14,7 +13,6 @@ import { PASSWORD_PATTERN } from 'src/app/shared/patterns/password-pattern';
 export class RegistrationFormComponent implements OnInit {
 
   registrationForm: FormGroup = new FormGroup({});
-  controls = RegistrationForm;
 
   constructor(
     private fb: FormBuilder,
@@ -42,7 +40,9 @@ export class RegistrationFormComponent implements OnInit {
   submit() {
     if (this.registrationForm?.valid) {
       const userData: UserCreateDto = this.registrationForm.value;
-      this.registrationService.createUser(userData).subscribe();
+      this.registrationService.createUser(userData).subscribe((response) => {
+        this.router.navigate(['login']);
+      });
     } else {
       throw new Error('form is not valid');
     }
