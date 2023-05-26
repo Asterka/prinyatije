@@ -12,6 +12,8 @@ import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { AddPetModalComponent } from '../modals/add-pet-modal/add-pet-modal.component';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SelectButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    SelectButtonModule
+    SelectButtonModule,
+    InputTextModule,
+    CalendarModule
   ],
   exports: [
     ProfilePageComponent,

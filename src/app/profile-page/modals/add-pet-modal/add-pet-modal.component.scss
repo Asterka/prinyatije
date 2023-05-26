@@ -1,0 +1,15 @@
+:host::ng-deep{
+  .form__input {
+    border-radius: 10px;
+  }
+  input.p-inputtext.p-component.p-element.p-password-input {
+    border-radius: 10px;
+    border: none;
+    background: #ffffff;
+    box-shadow: inset -4px 4px 8px #dbdbdb,
+                inset 4px -4px 8px #ffffff;
+  }
+  .p-calendar .p-inputtext{
+    border-radius: 8px;
+  }
+}
