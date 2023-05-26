@@ -1,16 +1,18 @@
 <section class="h-full">
   <form class="form" style="row-gap: 15px;" [formGroup]="loginForm">
     <h3 style="text-align: center;">Авторизация</h3>
-    <label>
-      <input class="form__input p-inputtext-lg" type="text" pInputText formControlName="login"/>
-    </label>
+    <span class="flex flex-column mt-2">
+      <label class="text-sm text-normal">Электронный адрес</label>
+      <input class="form__input p-inputtext-lg mt-2" type="text" pInputText formControlName="email"/>
+    </span>
 
-    <label>
-      <input class="form__input p-inputtext-lg" type="text" pInputText formControlName="password"/>
-    </label>
+    <span class="flex flex-column mt-2">
+      <label class="text-sm text-normal">Пароль</label>
+      <p-password class="form__input p-inputtext-lg mt-2 p-fluid" type="password" [toggleMask]="true" formControlName="password"/>
+    </span>
 
     <div class="form__login-button">
-      <button pButton label="Войти"></button>
+      <button pButton label="Войти" [disabled]="!loginForm.valid" (click)="submit()"></button>
     </div>
     <div class="form__registration-button">
       <button pButton class="p-button-sm p-button-text" label="Регистрация" (click)="redirectToRegistration()"></button>

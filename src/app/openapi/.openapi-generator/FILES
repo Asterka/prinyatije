@@ -7,6 +7,7 @@ api/authController.service.ts
 api/chatController.service.ts
 api/clinicalExaminationController.service.ts
 api/emailNotificationController.service.ts
+api/fileController.service.ts
 api/identificationsController.service.ts
 api/noteController.service.ts
 api/petsController.service.ts
@@ -22,6 +23,7 @@ model/chatMessageDto.ts
 model/clinicalExaminationCreateUpdateDto.ts
 model/clinicalExaminationDto.ts
 model/emailNotificationCreateDto.ts
+model/fileDto.ts
 model/identificationCreateUpdateDto.ts
 model/identificationDto.ts
 model/jwtDto.ts
@@ -40,6 +42,7 @@ model/petDto.ts
 model/signInDto.ts
 model/userCreateDto.ts
 model/userDto.ts
+model/userShortDto.ts
 model/userUpdateDto.ts
 model/vaccinationCreateUpdateDto.ts
 model/vaccinationDto.ts

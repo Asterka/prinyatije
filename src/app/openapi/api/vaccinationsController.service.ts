@@ -102,10 +102,10 @@ export class VaccinationsControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<VaccinationDto>;
-    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpResponse<VaccinationDto>>;
-    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpEvent<VaccinationDto>>;
-    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<any> {
+    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<VaccinationDto>;
+    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<VaccinationDto>>;
+    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<VaccinationDto>>;
+    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
             throw new Error('Required parameter petId was null or undefined when calling create2.');
         }
@@ -126,7 +126,7 @@ export class VaccinationsControllerService {
         if (localVarHttpHeaderAcceptSelected === undefined) {
             // to determine the Accept header
             const httpHeaderAccepts: string[] = [
-                '*/*'
+                'application/json'
             ];
             localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         }
@@ -250,10 +250,10 @@ export class VaccinationsControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public findAllByPetId(petId: string, page?: number, size?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<PageDtoVaccinationDto>;
-    public findAllByPetId(petId: string, page?: number, size?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpResponse<PageDtoVaccinationDto>>;
-    public findAllByPetId(petId: string, page?: number, size?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpEvent<PageDtoVaccinationDto>>;
-    public findAllByPetId(petId: string, page?: number, size?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<any> {
+    public findAllByPetId(petId: string, page?: number, size?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<PageDtoVaccinationDto>;
+    public findAllByPetId(petId: string, page?: number, size?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<PageDtoVaccinationDto>>;
+    public findAllByPetId(petId: string, page?: number, size?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<PageDtoVaccinationDto>>;
+    public findAllByPetId(petId: string, page?: number, size?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
             throw new Error('Required parameter petId was null or undefined when calling findAllByPetId.');
         }
@@ -281,7 +281,7 @@ export class VaccinationsControllerService {
         if (localVarHttpHeaderAcceptSelected === undefined) {
             // to determine the Accept header
             const httpHeaderAccepts: string[] = [
-                '*/*'
+                'application/json'
             ];
             localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         }

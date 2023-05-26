@@ -100,10 +100,10 @@ export class IdentificationsControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<IdentificationDto>;
-    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpResponse<IdentificationDto>>;
-    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpEvent<IdentificationDto>>;
-    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<any> {
+    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<IdentificationDto>;
+    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<IdentificationDto>>;
+    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<IdentificationDto>>;
+    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
             throw new Error('Required parameter petId was null or undefined when calling create4.');
         }
@@ -124,7 +124,7 @@ export class IdentificationsControllerService {
         if (localVarHttpHeaderAcceptSelected === undefined) {
             // to determine the Accept header
             const httpHeaderAccepts: string[] = [
-                '*/*'
+                'application/json'
             ];
             localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         }
@@ -246,12 +246,12 @@ export class IdentificationsControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getById(petId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<IdentificationDto>;
-    public getById(petId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpResponse<IdentificationDto>>;
-    public getById(petId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpEvent<IdentificationDto>>;
-    public getById(petId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<any> {
+    public getById1(petId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<IdentificationDto>;
+    public getById1(petId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<IdentificationDto>>;
+    public getById1(petId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<IdentificationDto>>;
+    public getById1(petId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
-            throw new Error('Required parameter petId was null or undefined when calling getById.');
+            throw new Error('Required parameter petId was null or undefined when calling getById1.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -267,7 +267,7 @@ export class IdentificationsControllerService {
         if (localVarHttpHeaderAcceptSelected === undefined) {
             // to determine the Accept header
             const httpHeaderAccepts: string[] = [
-                '*/*'
+                'application/json'
             ];
             localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         }
@@ -313,10 +313,10 @@ export class IdentificationsControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<IdentificationDto>;
-    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpResponse<IdentificationDto>>;
-    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpEvent<IdentificationDto>>;
-    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<any> {
+    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<IdentificationDto>;
+    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<IdentificationDto>>;
+    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<IdentificationDto>>;
+    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
             throw new Error('Required parameter petId was null or undefined when calling update2.');
         }
@@ -340,7 +340,7 @@ export class IdentificationsControllerService {
         if (localVarHttpHeaderAcceptSelected === undefined) {
             // to determine the Accept header
             const httpHeaderAccepts: string[] = [
-                '*/*'
+                'application/json'
             ];
             localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         }

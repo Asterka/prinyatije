@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,8 +10,9 @@ import { CommonModule } from '@angular/common';
 import { MainNavPageComponent } from './main-nav-page/main-nav-page.component';
 import { RouterModule } from '@angular/router';
 import { AuthModule } from './auth/auth.module';
-import { HttpClientModule }   from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule }   from '@angular/common/http';
 import { RegistrationModule } from './registration/registration.module';
+import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { RegistrationModule } from './registration/registration.module';
     RegistrationModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

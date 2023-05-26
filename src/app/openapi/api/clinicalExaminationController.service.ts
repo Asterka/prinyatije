@@ -102,10 +102,10 @@ export class ClinicalExaminationControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public create5(petId: string, clinicalExaminationCreateUpdateDto: ClinicalExaminationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<ClinicalExaminationDto>;
-    public create5(petId: string, clinicalExaminationCreateUpdateDto: ClinicalExaminationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpResponse<ClinicalExaminationDto>>;
-    public create5(petId: string, clinicalExaminationCreateUpdateDto: ClinicalExaminationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpEvent<ClinicalExaminationDto>>;
-    public create5(petId: string, clinicalExaminationCreateUpdateDto: ClinicalExaminationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<any> {
+    public create5(petId: string, clinicalExaminationCreateUpdateDto: ClinicalExaminationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<ClinicalExaminationDto>;
+    public create5(petId: string, clinicalExaminationCreateUpdateDto: ClinicalExaminationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<ClinicalExaminationDto>>;
+    public create5(petId: string, clinicalExaminationCreateUpdateDto: ClinicalExaminationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<ClinicalExaminationDto>>;
+    public create5(petId: string, clinicalExaminationCreateUpdateDto: ClinicalExaminationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
             throw new Error('Required parameter petId was null or undefined when calling create5.');
         }
@@ -126,7 +126,7 @@ export class ClinicalExaminationControllerService {
         if (localVarHttpHeaderAcceptSelected === undefined) {
             // to determine the Accept header
             const httpHeaderAccepts: string[] = [
-                '*/*'
+                'application/json'
             ];
             localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         }
@@ -250,10 +250,10 @@ export class ClinicalExaminationControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public findAllByPetId2(petId: string, page?: number, size?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<PageDtoClinicalExaminationDto>;
-    public findAllByPetId2(petId: string, page?: number, size?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpResponse<PageDtoClinicalExaminationDto>>;
-    public findAllByPetId2(petId: string, page?: number, size?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<HttpEvent<PageDtoClinicalExaminationDto>>;
-    public findAllByPetId2(petId: string, page?: number, size?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: '*/*', context?: HttpContext}): Observable<any> {
+    public findAllByPetId2(petId: string, page?: number, size?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<PageDtoClinicalExaminationDto>;
+    public findAllByPetId2(petId: string, page?: number, size?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<PageDtoClinicalExaminationDto>>;
+    public findAllByPetId2(petId: string, page?: number, size?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<PageDtoClinicalExaminationDto>>;
+    public findAllByPetId2(petId: string, page?: number, size?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
             throw new Error('Required parameter petId was null or undefined when calling findAllByPetId2.');
         }
@@ -281,7 +281,7 @@ export class ClinicalExaminationControllerService {
         if (localVarHttpHeaderAcceptSelected === undefined) {
             // to determine the Accept header
             const httpHeaderAccepts: string[] = [
-                '*/*'
+                'application/json'
             ];
             localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         }

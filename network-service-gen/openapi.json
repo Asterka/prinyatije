@@ -22,7 +22,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UserDto"
                 }
@@ -56,7 +56,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UserDto"
                 }
@@ -72,6 +72,41 @@
       }
     },
     "/pets/{petId}": {
+      "get": {
+        "tags": [
+          "pets-controller"
+        ],
+        "summary": "Find by id",
+        "operationId": "findById",
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PetDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
       "put": {
         "tags": [
           "pets-controller"
@@ -103,7 +138,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PetDto"
                 }
@@ -187,7 +222,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IdentificationDto"
                 }
@@ -296,7 +331,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PageDtoPetDto"
                 }
@@ -330,7 +365,7 @@
           "201": {
             "description": "Created",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PetDto"
                 }
@@ -387,7 +422,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PageDtoVaccinationDto"
                 }
@@ -432,7 +467,7 @@
           "201": {
             "description": "Created",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/VaccinationDto"
                 }
@@ -489,7 +524,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PageDtoNoteDto"
                 }
@@ -534,7 +569,7 @@
           "201": {
             "description": "Created",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/NoteDto"
                 }
@@ -555,7 +590,7 @@
           "identifications-controller"
         ],
         "summary": "Get identification",
-        "operationId": "getById",
+        "operationId": "getById_1",
         "parameters": [
           {
             "name": "petId",
@@ -571,7 +606,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IdentificationDto"
                 }
@@ -616,7 +651,7 @@
           "201": {
             "description": "Created",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IdentificationDto"
                 }
@@ -673,7 +708,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PageDtoClinicalExaminationDto"
                 }
@@ -718,7 +753,7 @@
           "201": {
             "description": "Created",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ClinicalExaminationDto"
                 }
@@ -762,13 +797,57 @@
         ]
       }
     },
+    "/files": {
+      "post": {
+        "tags": [
+          "file-controller"
+        ],
+        "summary": "Upload file",
+        "operationId": "handleFileUpload",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "file"
+                ],
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
     "/chats": {
       "get": {
         "tags": [
           "chat-controller"
         ],
         "summary": "Find all chat by name",
-        "operationId": "findAllByPetId_3",
+        "operationId": "findAllByName",
         "parameters": [
           {
             "name": "name",
@@ -803,7 +882,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PageDtoChatDto"
                 }
@@ -837,7 +916,7 @@
           "201": {
             "description": "Created",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ChatDto"
                 }
@@ -873,7 +952,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/JwtDto"
                 }
@@ -881,6 +960,43 @@
             }
           }
         }
+      }
+    },
+    "/users/{userId}": {
+      "get": {
+        "tags": [
+          "users-controller"
+        ],
+        "summary": "Get user by id",
+        "operationId": "getById",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/users/exist": {
@@ -904,7 +1020,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "boolean"
                 }
@@ -920,7 +1036,7 @@
           "chat-controller"
         ],
         "summary": "Find all messages by chatId",
-        "operationId": "findAllByPetId_4",
+        "operationId": "findAllByChatId",
         "parameters": [
           {
             "name": "chatId",
@@ -956,7 +1072,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PageDtoChatMessageDto"
                 }
@@ -1104,6 +1220,9 @@
           "surname": {
             "type": "string"
           },
+          "avatarUri": {
+            "type": "string"
+          },
           "address": {
             "type": "string"
           },
@@ -1124,6 +1243,9 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "avatarUri": {
+            "type": "string"
           },
           "email": {
             "type": "string"
@@ -1153,6 +1275,9 @@
           "updateAt": {
             "type": "string",
             "format": "date-time"
+          },
+          "online": {
+            "type": "boolean"
           }
         }
       },
@@ -1173,6 +1298,9 @@
           "sex": {
             "type": "string"
           },
+          "avatarUri": {
+            "type": "string"
+          },
           "dateOfBirth": {
             "type": "string",
             "format": "date-time"
@@ -1191,6 +1319,15 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "avatarUri": {
+            "type": "string"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserShortDto"
+            }
           },
           "name": {
             "type": "string"
@@ -1218,6 +1355,35 @@
           "updateAt": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "UserShortDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "avatarUri": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updateAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "online": {
+            "type": "boolean"
           }
         }
       },
@@ -1310,6 +1476,9 @@
             "type": "string"
           },
           "surname": {
+            "type": "string"
+          },
+          "avatarUri": {
             "type": "string"
           },
           "address": {
@@ -1501,6 +1670,14 @@
           }
         }
       },
+      "FileDto": {
+        "type": "object",
+        "properties": {
+          "uri": {
+            "type": "string"
+          }
+        }
+      },
       "ChatCreateUpdateDto": {
         "type": "object",
         "properties": {
@@ -1516,9 +1693,8 @@
             "type": "string",
             "format": "uuid"
           },
-          "ownerUserId": {
-            "type": "string",
-            "format": "uuid"
+          "user": {
+            "$ref": "#/components/schemas/UserShortDto"
           },
           "name": {
             "type": "string"
@@ -1680,9 +1856,8 @@
       "ChatMessageDto": {
         "type": "object",
         "properties": {
-          "userId": {
-            "type": "string",
-            "format": "uuid"
+          "user": {
+            "$ref": "#/components/schemas/UserShortDto"
           },
           "value": {
             "type": "string"

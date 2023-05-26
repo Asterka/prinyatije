@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs';
+import { Router } from '@angular/router';
+import { from, tap } from 'rxjs';
+import { AuthControllerService, JwtDto, SignInDto, UserDto, UsersControllerService } from 'src/app/openapi';
 
 @Injectable({
   providedIn: 'root'
@@ -8,20 +10,21 @@ import { tap } from 'rxjs';
 export class LoginService {
 
   constructor(
-    private http: HttpClient,
+    private loginDefaultService: AuthControllerService,
+    private userService: UsersControllerService,
+    private router: Router,
   ) { }
 
-  login(credentials: any) {
+  login(credentials: SignInDto) {
     const userCredentials = {
       email: credentials.email.toLowerCase(),
       password: credentials.password,
     };
 
-    return this.http.post('auth/login', credentials).pipe(
-      tap((response) => {
-        this.saveTokenToLocalStorage(response as string);
-      })
-    );
+    this.loginDefaultService.signIn(userCredentials).subscribe((response: JwtDto) => {
+      this.saveTokenToLocalStorage(response.accessToken as string);
+      this.router.navigate(['profile']);
+    });
   }
 
   saveTokenToLocalStorage(token: string) {
@@ -34,6 +37,24 @@ export class LoginService {
 
   removeTokenFromLocalStorage() {
     localStorage.removeItem('token');
+  }
+
+  getTokenExpirationDate(): Date {
+    if (this.getTokenFromLocalStorage()) {
+      // TODO: remove '000' adding when backend will start sending milliseconds
+      return new Date(this.getTokenData().exp + '000');
+    }
+    return new Date(0);
+  }
+
+  getTokenData() {
+    return JSON.parse(atob(<string>this.getTokenFromLocalStorage()?.split('.')[1]));
+  }
+
+  getUser() {
+    this.userService.getMe().subscribe((user: UserDto) => {
+      console.log(user)
+    });
   }
 
 }
