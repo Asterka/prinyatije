@@ -9,10 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { UserShortDto } from './userShortDto';
 
 
 export interface PetDto { 
     id?: string;
+    avatarUri?: string;
+    users?: Array<UserShortDto>;
     name?: string;
     breed?: string;
     sex?: string;

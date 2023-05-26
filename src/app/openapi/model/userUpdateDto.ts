@@ -14,6 +14,7 @@
 export interface UserUpdateDto { 
     name: string;
     surname: string;
+    avatarUri?: string;
     address?: string;
     postCode?: string;
     country?: string;

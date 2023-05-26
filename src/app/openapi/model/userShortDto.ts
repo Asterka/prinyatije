@@ -11,13 +11,13 @@
  */
 
 
-export interface PetCreateUpdateDto { 
-    name: string;
-    breed: string;
-    sex: string;
+export interface UserShortDto { 
+    id?: string;
     avatarUri?: string;
-    dateOfBirth?: string;
-    coat?: string;
-    coatVariety?: string;
+    email?: string;
+    name?: string;
+    createdAt?: string;
+    updateAt?: string;
+    online?: boolean;
 }
 

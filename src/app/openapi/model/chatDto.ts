@@ -9,11 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { UserShortDto } from './userShortDto';
 
 
 export interface ChatDto { 
     id?: string;
-    ownerUserId?: string;
+    user?: UserShortDto;
     name?: string;
     createdAt?: string;
     updateAt?: string;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { PASSWORD_PATTERN } from 'src/app/shared/patterns/password-pattern';
 
 @Component({
   selector: 'app-login-form',
@@ -24,16 +25,17 @@ export class LoginFormComponent implements OnInit {
 
   initForm() {
     this.loginForm = this.fb.group({
-      login: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.pattern(PASSWORD_PATTERN)]],
     });
   }
 
   submit() {
     if (this.loginForm.valid) {
+      console.log(this.loginForm)
       this.loginService.removeTokenFromLocalStorage();
       const userCredentials = this.loginForm.value;
-      this.loginService.login(userCredentials)
+      this.loginService.login(userCredentials);
     } else {
       throw new Error('form is not valid');
     }

@@ -7,6 +7,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginFormComponent } from './login-page/login-form/login-form.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { LoginService } from './services/login.service';
+import { PasswordModule } from 'primeng/password';
 
 
 
@@ -18,6 +19,7 @@ import { LoginService } from './services/login.service';
     ReactiveFormsModule,
     ButtonModule,
     InputTextModule,
+    PasswordModule
   ],
   providers: [LoginService]
 })

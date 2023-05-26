@@ -13,6 +13,7 @@
 
 export interface UserDto { 
     id?: string;
+    avatarUri?: string;
     email?: string;
     name?: string;
     surname?: string;
@@ -22,5 +23,6 @@ export interface UserDto {
     city?: string;
     createdAt?: string;
     updateAt?: string;
+    online?: boolean;
 }
 

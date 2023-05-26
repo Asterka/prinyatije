@@ -1,19 +1,48 @@
 <section class="h-full">
-  <form class="form" style="row-gap: 15px;" [formGroup]="registrationForm">
-    <h3 style="text-align: center;">Регистрация</h3>
-    <label>
-      <input class="form__input p-inputtext-lg" type="text" pInputText formControlName="login"/>
-    </label>
-
-    <label>
-      <input class="form__input p-inputtext-lg" type="text" pInputText formControlName="password"/>
-    </label>
-
-    <div class="form__login-button">
-      <button pButton label="Зарегистрироваться"></button>
-    </div>
-    <div class="form__registration-button">
-      <button pButton class="p-button-sm p-button-text" label="Войти" (click)="redirectToLogin()"></button>
-    </div>
+  <h3 style="text-align: center;">Регистрация</h3>
+  <form class="form mt-4" style="gap: 15px;" [formGroup]="registrationForm">
+    <section class="form__column">
+      <span class="flex flex-column mt-2">
+        <label class="text-sm text-normal">Электронный адрес</label>
+        <input class="form__input p-inputtext-lg mt-2" type="text" pInputText formControlName="email"/>
+      </span>
+      <span class="flex flex-column mt-2">
+        <label class="text-sm text-normal">Пароль</label>
+        <p-password class="form__input p-inputtext-lg mt-2 p-fluid" type="password" [toggleMask]="true" formControlName="password"/>
+      </span>
+      <span class="flex flex-column mt-2">
+        <label class="text-sm text-normal">Имя</label>
+        <input class="form__input p-inputtext-lg mt-2" type="text" pInputText formControlName="name"/>
+      </span>
+      <span class="flex flex-column mt-2">
+        <label class="text-sm text-normal">Фамилия</label>
+        <input class="form__input p-inputtext-lg mt-2" type="text" pInputText formControlName="surname"/>
+      </span>
+    </section>
+    <section class="form__column">
+      <span class="flex flex-column mt-2">
+        <label class="text-sm text-normal">Адрес</label>
+        <input class="form__input p-inputtext-lg mt-2" type="text" pInputText formControlName="address"/>
+      </span>
+      <span class="flex flex-column mt-2">
+        <label class="text-sm text-normal">Почтовый код</label>
+        <input class="form__input p-inputtext-lg mt-2" type="text" pInputText formControlName="postCode"/>
+      </span>
+      <span class="flex flex-column mt-2">
+        <label class="text-sm text-normal">Страна</label>
+        <input class="form__input p-inputtext-lg mt-2" type="text" pInputText formControlName="country"/>
+      </span>
+      <span class="flex flex-column mt-2">
+        <label class="text-sm text-normal">Город</label>
+        <input class="form__input p-inputtext-lg mt-2" type="text" pInputText formControlName="city"/>
+      </span>
+    </section>
   </form>
+  
+  <div class="form__login-button mt-5">
+    <button pButton label="Зарегистрироваться" [disabled]="!registrationForm.valid" (click)="submit()"></button>
+  </div>
+  <div class="form__registration-button mt-3">
+    <button pButton class="p-button-sm p-button-text" label="Войти" (click)="redirectToLogin()"></button>
+  </div>
 </section>
