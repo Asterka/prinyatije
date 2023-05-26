@@ -1,3 +1,4 @@
+import { NetworkErrorResolverService } from './shared/services/network-error-resolver.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,6 +36,7 @@ import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    NetworkErrorResolverService
   ],
   bootstrap: [AppComponent]
 })
