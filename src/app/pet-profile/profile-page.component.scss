@@ -1,12 +1,14 @@
 .p-grid{
   display: grid;
-  grid-template-columns: 3fr 7fr 2fr;
+  grid-template-columns: 3fr 6fr 3fr;
+  height: 100%;
+  overflow: hidden;
 }
 
 .main-section{
   padding: 80px;
   padding-top: 60px;
-  overflow: scroll;
+  position: relative;
 }
 
 .main-page{

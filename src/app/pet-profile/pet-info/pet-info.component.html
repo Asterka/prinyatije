@@ -1,23 +1,47 @@
-<section class="pet-info">
-  <div>
-    <button 
-      pButton 
-      class="p-button-text text-color-secondary" 
-      label="Назад к профилю" 
-      icon="pi pi-arrow-left"
-      (click)="returnToProfile()"
-      
-    ></button>
-  </div>
-  <div class="flex justify-content-between">
-    <div class="mr-3" style="width: 60px; height: 60px;">
-      <img [src]="pet.avatarUri">
-    </div>
+<section class="pet-info ">
+  <section>
     <div>
-      <div class="text-xl text-bold">{{ pet.name }}</div>
+      <button 
+        pButton 
+        class="p-button-text text-color-secondary" 
+        label="Назад к профилю" 
+        icon="pi pi-arrow-left"
+        (click)="returnToProfile()"
+      ></button>
+    </div>
+    <div class="flex  mt-4">
+      <div class="mr-3" style="width: 60px; height: 60px;">
+        <img [src]="pet.avatarUri">
+      </div>
       <div>
-        <button pButton class="p-button-text text-sm text-semibold p-button-sm" icon="pi pi-pencil" iconPos="left" label="редактировать профиль"></button>
+        <div class="text-xl text-bold">{{ pet.name }}</div>
+        <div>
+          <button pButton class="p-button-text text-sm text-semibold p-button-sm" icon="pi pi-pencil" iconPos="left" label="редактировать профиль"></button>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="pet-info__params">
+      <div class="pet-info__param">
+        <div>Порода: {{ pet.breed }}</div>
+        <div>День рождения: {{ getPerBirthday(pet.dateOfBirth) }}</div>
+        <div>Возраст: {{ getPetAge(pet.dateOfBirth) }}</div>
+      </div>
+    </div>
+  </section>
+  <section class="flex justify-content-center mb-3" style="max-width: 260px;">
+    <div>
+        <div
+        class="card flex justify-content-center align-items-center"
+      >
+        <span class="card__label ellipsis">Подобрать услуги</span>
+      </div>
+      <div
+        class="card flex justify-content-center align-items-center mt-3"
+
+      >
+        <span class="card__label ellipsis">Записать в ветклинику</span>
+      </div>
+    </div>
+
+  </section>
 </section>
