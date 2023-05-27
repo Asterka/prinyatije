@@ -14,6 +14,7 @@ import { UserShortDto } from './userShortDto';
 
 export interface PetDto { 
     id?: string;
+    type?: PetDto.TypeEnum;
     avatarUri?: string;
     users?: Array<UserShortDto>;
     name?: string;
@@ -25,4 +26,15 @@ export interface PetDto {
     createdAt?: string;
     updateAt?: string;
 }
+export namespace PetDto {
+    export type TypeEnum = 'DOG' | 'CAT' | 'PARROTS' | 'HAMSTER' | 'SNAKE';
+    export const TypeEnum = {
+        Dog: 'DOG' as TypeEnum,
+        Cat: 'CAT' as TypeEnum,
+        Parrots: 'PARROTS' as TypeEnum,
+        Hamster: 'HAMSTER' as TypeEnum,
+        Snake: 'SNAKE' as TypeEnum
+    };
+}
+
 

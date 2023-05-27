@@ -1,26 +1,48 @@
 <section>
   <form class="modal" [formGroup]="creatingForm">
     <span class="flex flex-column mt-2">
-      <label>Тип услуги<span style="color: red">*</span></label>
-      <input class="mt-1" pInputText type="text">
+      <label class="text-sm">Тип услуги<span style="color: red">*</span></label>
+      <input class="mt-1" pInputText type="text" formControlName="serviceType">
     </span>
-    <span class="flex align-items-center mt-4">
-      <p-inputSwitch formControlName="fixPrice"></p-inputSwitch>
-      <label class="ml-2">Фиксированная цена</label>
+    <span class="p-fluid flex flex-column mt-2">
+      <label class="text-sm">Тип питомца<span style="color: red">*</span></label>
+      <p-dropdown 
+        class="mt-1" 
+        [options]="petTypes" 
+        placeholder="Выберите тип" 
+        formControlName="petType"
+      ></p-dropdown>
     </span>
+    <span class="flex" style="column-gap: 40px;">
+      <span class="flex align-items-center mt-4">
+        <p-inputSwitch formControlName="fixPrice"></p-inputSwitch>
+        <label class="text-sm ml-2">Фиксированная цена</label>
+      </span>
+      <span class="flex align-items-center mt-4">
+        <p-inputSwitch formControlName="departure"></p-inputSwitch>
+        <label class="text-sm ml-2">Выезд на дом</label>
+      </span>
+    </span>
+
     <span class="flex flex-row justify-content-between mt-4 w-full" style="column-gap: 24px;">
       <span class="flex flex-column w-full">
-        <label>Минимальная цена, руб</label>
+        <label class="text-sm">Минимальная цена, руб</label>
         <div class="w-full p-fluid">
           <p-inputNumber class="mt-1" formControlName="minPrice"></p-inputNumber>
         </div>
       </span>
       <span class="flex flex-column w-full">
-        <label>Макимальная цена, руб</label>
+        <label class="text-sm">Макcимальная цена, руб</label>
         <div class="w-full p-fluid">
           <p-inputNumber class="mt-1" formControlName="maxPrice"></p-inputNumber>
         </div>
       </span>
+    </span>
+    <span class="flex flex-column w-full mt-4">
+      <label class="text-sm">Описание услуги</label>
+      <div class="w-full p-fluid">
+        <textarea pInputTextarea class="mt-1" formControlName="message"></textarea>
+      </div>
     </span>
   </form>
 </section>

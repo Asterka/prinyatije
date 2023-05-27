@@ -16,6 +16,7 @@ import { RegistrationModule } from './registration/registration.module';
 import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { PetService } from './shared/services/pet.service';
+import { UserServicesService } from './shared/services/user-services.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { PetService } from './shared/services/pet.service';
   providers: [
     DialogService,
     PetService,
+    UserServicesService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     NetworkErrorResolverService
   ],

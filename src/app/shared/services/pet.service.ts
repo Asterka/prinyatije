@@ -12,10 +12,22 @@ export class PetService {
   ) { }
 
   createPet(pet: PetCreateUpdateDto) {
-    this.petService.create1(pet).subscribe();
+    return this.petService.create3(pet);
   }
 
   getPets(): Observable<PageDtoPetDto> {
-    return this.petService.findByUserId();
+    return this.petService.findByUserId1();
+  }
+
+  removePet(petId: string | undefined) {
+    return this.petService.delete1(petId as string);
+  }
+
+  getPetTypes() {
+    return this.petService.findAllPetTypes();
+  }
+
+  getPetById(petId: string) {
+    return this.petService.findById(petId);
   }
 }

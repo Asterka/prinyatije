@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api.module.ts
 api/api.ts
@@ -11,6 +10,8 @@ api/fileController.service.ts
 api/identificationsController.service.ts
 api/noteController.service.ts
 api/petsController.service.ts
+api/userServiceRequestsController.service.ts
+api/userServicesController.service.ts
 api/usersController.service.ts
 api/vaccinationsController.service.ts
 configuration.ts
@@ -35,13 +36,21 @@ model/pageDtoChatMessageDto.ts
 model/pageDtoClinicalExaminationDto.ts
 model/pageDtoNoteDto.ts
 model/pageDtoPetDto.ts
+model/pageDtoUserCustomerServiceDto.ts
+model/pageDtoUserExecutorServiceDto.ts
 model/pageDtoVaccinationDto.ts
 model/paging.ts
 model/petCreateUpdateDto.ts
 model/petDto.ts
 model/signInDto.ts
 model/userCreateDto.ts
+model/userCustomerDto.ts
+model/userCustomerServiceDto.ts
 model/userDto.ts
+model/userExecutorDto.ts
+model/userExecutorServiceDto.ts
+model/userServiceCreateUpdateDto.ts
+model/userServiceRequestCreateDto.ts
 model/userShortDto.ts
 model/userUpdateDto.ts
 model/vaccinationCreateUpdateDto.ts

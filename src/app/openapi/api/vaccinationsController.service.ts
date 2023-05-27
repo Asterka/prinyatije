@@ -102,15 +102,15 @@ export class VaccinationsControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<VaccinationDto>;
-    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<VaccinationDto>>;
-    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<VaccinationDto>>;
-    public create2(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+    public create4(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<VaccinationDto>;
+    public create4(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<VaccinationDto>>;
+    public create4(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<VaccinationDto>>;
+    public create4(petId: string, vaccinationCreateUpdateDto: VaccinationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
-            throw new Error('Required parameter petId was null or undefined when calling create2.');
+            throw new Error('Required parameter petId was null or undefined when calling create4.');
         }
         if (vaccinationCreateUpdateDto === null || vaccinationCreateUpdateDto === undefined) {
-            throw new Error('Required parameter vaccinationCreateUpdateDto was null or undefined when calling create2.');
+            throw new Error('Required parameter vaccinationCreateUpdateDto was null or undefined when calling create4.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -181,15 +181,15 @@ export class VaccinationsControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public delete1(petId: string, vaccinationId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
-    public delete1(petId: string, vaccinationId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
-    public delete1(petId: string, vaccinationId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
-    public delete1(petId: string, vaccinationId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
+    public delete2(petId: string, vaccinationId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
+    public delete2(petId: string, vaccinationId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
+    public delete2(petId: string, vaccinationId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
+    public delete2(petId: string, vaccinationId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
-            throw new Error('Required parameter petId was null or undefined when calling delete1.');
+            throw new Error('Required parameter petId was null or undefined when calling delete2.');
         }
         if (vaccinationId === null || vaccinationId === undefined) {
-            throw new Error('Required parameter vaccinationId was null or undefined when calling delete1.');
+            throw new Error('Required parameter vaccinationId was null or undefined when calling delete2.');
         }
 
         let localVarHeaders = this.defaultHeaders;

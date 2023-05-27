@@ -15,9 +15,21 @@ export interface PetCreateUpdateDto {
     name: string;
     breed: string;
     sex: string;
+    type: PetCreateUpdateDto.TypeEnum;
     avatarUri?: string;
     dateOfBirth?: string;
     coat?: string;
     coatVariety?: string;
 }
+export namespace PetCreateUpdateDto {
+    export type TypeEnum = 'DOG' | 'CAT' | 'PARROTS' | 'HAMSTER' | 'SNAKE';
+    export const TypeEnum = {
+        Dog: 'DOG' as TypeEnum,
+        Cat: 'CAT' as TypeEnum,
+        Parrots: 'PARROTS' as TypeEnum,
+        Hamster: 'HAMSTER' as TypeEnum,
+        Snake: 'SNAKE' as TypeEnum
+    };
+}
+
 

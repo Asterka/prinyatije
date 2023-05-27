@@ -21,6 +21,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { PetService } from 'src/app/shared/services/pet.service';
+import { MenuModule } from 'primeng/menu';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { PetService } from 'src/app/shared/services/pet.service';
     CalendarModule,
     FileUploadModule,
     InputTextareaModule,
-    DropdownModule
+    DropdownModule,
+    MenuModule,
   ],
   exports: [
     ProfilePageComponent,

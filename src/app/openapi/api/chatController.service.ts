@@ -103,12 +103,12 @@ export class ChatControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public create6(chatCreateUpdateDto: ChatCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<ChatDto>;
-    public create6(chatCreateUpdateDto: ChatCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<ChatDto>>;
-    public create6(chatCreateUpdateDto: ChatCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<ChatDto>>;
-    public create6(chatCreateUpdateDto: ChatCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+    public create8(chatCreateUpdateDto: ChatCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<ChatDto>;
+    public create8(chatCreateUpdateDto: ChatCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<ChatDto>>;
+    public create8(chatCreateUpdateDto: ChatCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<ChatDto>>;
+    public create8(chatCreateUpdateDto: ChatCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (chatCreateUpdateDto === null || chatCreateUpdateDto === undefined) {
-            throw new Error('Required parameter chatCreateUpdateDto was null or undefined when calling create6.');
+            throw new Error('Required parameter chatCreateUpdateDto was null or undefined when calling create8.');
         }
 
         let localVarHeaders = this.defaultHeaders;

@@ -11,14 +11,11 @@
  */
 
 
-export interface UserUpdateDto { 
-    name: string;
-    surname: string;
-    communicationType?: string;
+export interface UserExecutorDto { 
+    id?: string;
     avatarUri?: string;
-    address?: string;
-    postCode?: string;
-    country?: string;
-    city?: string;
+    createdAt?: string;
+    updateAt?: string;
+    online?: boolean;
 }
 

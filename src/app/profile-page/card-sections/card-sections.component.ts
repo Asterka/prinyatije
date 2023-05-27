@@ -2,10 +2,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { AddPetModalComponent } from '../modals/add-pet-modal/add-pet-modal.component';
 import { CreatingServiceModalComponent } from '../modals/creating-service-modal/creating-service-modal.component';
-import { PetCreateUpdateDto, PetDto } from 'src/app/openapi';
+import { PageDtoUserExecutorServiceDto, PetCreateUpdateDto, PetDto, UserExecutorServiceDto, UserServiceCreateUpdateDto } from 'src/app/openapi';
 import { PetService } from 'src/app/shared/services/pet.service';
 import * as dayjs from 'dayjs'
-import { first } from 'rxjs';
+import { Subject, first } from 'rxjs';
+import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
+import { UserServicesService } from 'src/app/shared/services/user-services.service';
 
 interface Card {
   imageSrc?: string;
@@ -20,6 +23,11 @@ export class CardSectionsComponent implements OnInit {
   _cardData: Card = {};
   ref?: DynamicDialogRef;
   pets: PetDto[] = [];
+  userServices: UserExecutorServiceDto[] = [];
+  items: MenuItem[] = [
+    { label: 'Редактировать', icon: 'pi pi-pencil' },
+    { label: 'Поделиться паспортом', icon: 'pi pi-link' },
+  ];
 
   @Input() set data(value: Card) {
     this._cardData = value;
@@ -28,10 +36,13 @@ export class CardSectionsComponent implements OnInit {
   constructor(
     public dialogService: DialogService,
     public petService: PetService,
+    public router: Router,
+    public serviceService: UserServicesService,
   ) {}
 
   ngOnInit(): void {
     this.getPets();
+    this.getUserServices();
   }
 
   show() {
@@ -41,8 +52,9 @@ export class CardSectionsComponent implements OnInit {
     });
 
     modal.onClose.pipe(first()).subscribe((pet: PetCreateUpdateDto) => {
-      this.petService.createPet(pet);
-      this.getPets();
+      this.petService.createPet(pet).subscribe((newPet) => {
+        this.getPets();
+      });
     })
   }
 
@@ -50,6 +62,11 @@ export class CardSectionsComponent implements OnInit {
     let modal = this.dialogService.open(CreatingServiceModalComponent, {
       header: 'Добавление услуги',
       styleClass: 'modal-M',
+    })
+    modal.onClose.subscribe(service => {
+      this.serviceService.createUserService(service).subscribe(() => {
+        this.getUserServices();
+      });
     })
   }
 
@@ -63,4 +80,29 @@ export class CardSectionsComponent implements OnInit {
     return dayjs(date).format('DD/MM/YYYY');
   }
 
+  removePet(petId: string | undefined) {
+    this.petService.removePet(petId).subscribe(() => {
+        this.getPets();
+    });
+  }
+
+  openPetCard(event: Event, petId: string | undefined) {
+    this.router.navigate(['petProfile'], {
+      queryParams: {
+        petId,
+      }
+    });
+  }
+
+  getUserServices() {
+    this.serviceService.getUserServices().subscribe(userServices => {
+      this.userServices = userServices.content as UserExecutorServiceDto[];
+    });
+  }
+
+  removeUserService(userServiceId: string | undefined) {
+    this.serviceService.removeUserService(userServiceId as string).subscribe(() => {
+      this.getUserServices();
+    })
+  }
 }
