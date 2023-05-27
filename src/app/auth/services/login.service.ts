@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { from, tap } from 'rxjs';
 import { AuthControllerService, JwtDto, SignInDto, UserDto, UsersControllerService } from 'src/app/openapi';
 
 @Injectable({

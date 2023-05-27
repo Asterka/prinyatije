@@ -1,5 +1,5 @@
 import { RxStompService } from './stomp.service';
-import { myRxStompConfig } from '../../stomp.config';
+import { myRxStompConfig } from './stomp.config';
 
 export function rxStompServiceFactory() {
   const rxStomp = new RxStompService();

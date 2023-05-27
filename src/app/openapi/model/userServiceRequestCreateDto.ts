@@ -11,14 +11,7 @@
  */
 
 
-export interface UserUpdateDto { 
-    name: string;
-    surname: string;
-    communicationType?: string;
-    avatarUri?: string;
-    address?: string;
-    postCode?: string;
-    country?: string;
-    city?: string;
+export interface UserServiceRequestCreateDto { 
+    id?: string;
 }
 

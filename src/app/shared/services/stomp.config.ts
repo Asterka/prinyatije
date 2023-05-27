@@ -1,14 +1,14 @@
 import { RxStompConfig } from '@stomp/rx-stomp';
+import SockJS from 'sockjs-client';
 
 export const myRxStompConfig: RxStompConfig = {
-  // Which server?
-  brokerURL: 'ws://77.232.139.121:8000//ws',
+  // Which server
 
   // Headers
   // Typical keys: login, passcode, host
   connectHeaders: {
-    login: 'guest',
-    passcode: 'guest',
+    Authentication:
+      'eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOiJmNTFiNTgwMC1iZTExLTQ2ZmEtYTE3ZC03ZTY3NzdmZGZhMDIiLCJleHAiOjE2ODU3OTc3NzB9.OuhV_sT4PJWUqfon6d4YcNSNzhY3VCPIAXkone0NoJAzsV1nDi9X6Z2_-VdNVMvbc_4uPpzMcbZPCpLyh0LqIg',
   },
 
   // How often to heartbeat?
@@ -27,4 +27,7 @@ export const myRxStompConfig: RxStompConfig = {
   debug: (msg: string): void => {
     console.log(new Date(), msg);
   },
+  webSocketFactory: function () {
+    return new SockJS('http://77.232.139.121:8000/ws-stomp');
+  }
 };

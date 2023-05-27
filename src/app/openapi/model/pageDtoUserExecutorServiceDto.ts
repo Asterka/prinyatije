@@ -9,16 +9,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { UserExecutorServiceDto } from './userExecutorServiceDto';
+import { Paging } from './paging';
 
 
-export interface UserUpdateDto { 
-    name: string;
-    surname: string;
-    communicationType?: string;
-    avatarUri?: string;
-    address?: string;
-    postCode?: string;
-    country?: string;
-    city?: string;
+export interface PageDtoUserExecutorServiceDto { 
+    content?: Array<UserExecutorServiceDto>;
+    paging?: Paging;
+    pageSize?: number;
+    pageNumber?: number;
 }
 

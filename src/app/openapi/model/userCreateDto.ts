@@ -16,6 +16,7 @@ export interface UserCreateDto {
     password: string;
     name: string;
     surname: string;
+    communicationType?: string;
     avatarUri?: string;
     address?: string;
     postCode?: string;

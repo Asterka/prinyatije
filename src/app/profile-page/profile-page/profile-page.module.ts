@@ -22,6 +22,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { PetService } from 'src/app/shared/services/pet.service';
+import { ChatMessagesComponent } from '../chat-profile/chat-messages-component/chat-messages/chat-messages.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PetService } from 'src/app/shared/services/pet.service';
     CardComponent,
     GTMTemplate,
     ProfileHeaderComponent,
-    AddPetModalComponent
+    AddPetModalComponent,
+    ChatMessagesComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +53,7 @@ import { PetService } from 'src/app/shared/services/pet.service';
     CalendarModule,
     FileUploadModule,
     InputTextareaModule,
-    DropdownModule
+    DropdownModule,
   ],
   exports: [
     ProfilePageComponent,

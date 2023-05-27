@@ -13,11 +13,18 @@
   right: 0px;
 }
 
-.chat-sections{
-  overflow: clip;
+.chat-sections {
+  height: 100%;
 }
 
+
 :host::ng-deep {
+
+  .card{
+    margin-bottom: 2rem;
+    width: unset !important;
+  }
+
   .p-tabview .p-tabview-panels {
     background-color: transparent;
   }
@@ -62,5 +69,17 @@
   }
   .p-tabview .p-tabview-panels {
     padding: 0;
+    height: 100%;
+    overflow: clip;
+  }
+
+  .flex-tabview {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+  }
+  .p-tabview-panel {
+    height: 100%;
   }
 }

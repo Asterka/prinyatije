@@ -19,13 +19,11 @@ import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
 // @ts-ignore
-import { ChatCreateUpdateDto } from '../model/chatCreateUpdateDto';
+import { PageDtoUserCustomerServiceDto } from '../model/pageDtoUserCustomerServiceDto';
 // @ts-ignore
-import { ChatDto } from '../model/chatDto';
+import { UserCustomerServiceDto } from '../model/userCustomerServiceDto';
 // @ts-ignore
-import { PageDtoChatDto } from '../model/pageDtoChatDto';
-// @ts-ignore
-import { PageDtoWsChatMessageDto } from '../model/pageDtoWsChatMessageDto';
+import { UserServiceRequestCreateDto } from '../model/userServiceRequestCreateDto';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -36,7 +34,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class ChatControllerService {
+export class UserServiceRequestsControllerService {
 
     protected basePath = 'http://77.232.139.121:8000';
     public defaultHeaders = new HttpHeaders();
@@ -98,17 +96,17 @@ export class ChatControllerService {
     }
 
     /**
-     * Create chat
-     * @param chatCreateUpdateDto 
+     * Create requests
+     * @param userServiceRequestCreateDto 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public create8(chatCreateUpdateDto: ChatCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<ChatDto>;
-    public create8(chatCreateUpdateDto: ChatCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<ChatDto>>;
-    public create8(chatCreateUpdateDto: ChatCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<ChatDto>>;
-    public create8(chatCreateUpdateDto: ChatCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
-        if (chatCreateUpdateDto === null || chatCreateUpdateDto === undefined) {
-            throw new Error('Required parameter chatCreateUpdateDto was null or undefined when calling create8.');
+    public create2(userServiceRequestCreateDto: UserServiceRequestCreateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<UserCustomerServiceDto>;
+    public create2(userServiceRequestCreateDto: UserServiceRequestCreateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<UserCustomerServiceDto>>;
+    public create2(userServiceRequestCreateDto: UserServiceRequestCreateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<UserCustomerServiceDto>>;
+    public create2(userServiceRequestCreateDto: UserServiceRequestCreateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+        if (userServiceRequestCreateDto === null || userServiceRequestCreateDto === undefined) {
+            throw new Error('Required parameter userServiceRequestCreateDto was null or undefined when calling create2.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -158,11 +156,11 @@ export class ChatControllerService {
             }
         }
 
-        let localVarPath = `/chats`;
-        return this.httpClient.request<ChatDto>('post', `${this.configuration.basePath}${localVarPath}`,
+        let localVarPath = `/services/requests`;
+        return this.httpClient.request<UserCustomerServiceDto>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                body: chatCreateUpdateDto,
+                body: userServiceRequestCreateDto,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
@@ -173,98 +171,16 @@ export class ChatControllerService {
     }
 
     /**
-     * Create message
-     * @param chatId 
-     * @param body 
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public createMessages(chatId: string, body: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
-    public createMessages(chatId: string, body: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
-    public createMessages(chatId: string, body: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
-    public createMessages(chatId: string, body: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
-        if (chatId === null || chatId === undefined) {
-            throw new Error('Required parameter chatId was null or undefined when calling createMessages.');
-        }
-        if (body === null || body === undefined) {
-            throw new Error('Required parameter body was null or undefined when calling createMessages.');
-        }
-
-        let localVarHeaders = this.defaultHeaders;
-
-        let localVarCredential: string | undefined;
-        // authentication (bearerAuth) required
-        localVarCredential = this.configuration.lookupCredential('bearerAuth');
-        if (localVarCredential) {
-            localVarHeaders = localVarHeaders.set('Authorization', 'Bearer ' + localVarCredential);
-        }
-
-        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
-        if (localVarHttpHeaderAcceptSelected === undefined) {
-            // to determine the Accept header
-            const httpHeaderAccepts: string[] = [
-            ];
-            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
-        }
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        let localVarHttpContext: HttpContext | undefined = options && options.context;
-        if (localVarHttpContext === undefined) {
-            localVarHttpContext = new HttpContext();
-        }
-
-
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/chats/${this.configuration.encodeParam({name: "chatId", value: chatId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: "uuid"})}/messages`;
-        return this.httpClient.request<any>('post', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                body: body,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
-     * Find all messages by chatId
-     * @param chatId 
+     * Find my requests for customers
      * @param page 
      * @param size 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public findAllByChatId(chatId: string, page?: number, size?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<PageDtoWsChatMessageDto>;
-    public findAllByChatId(chatId: string, page?: number, size?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<PageDtoWsChatMessageDto>>;
-    public findAllByChatId(chatId: string, page?: number, size?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<PageDtoWsChatMessageDto>>;
-    public findAllByChatId(chatId: string, page?: number, size?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
-        if (chatId === null || chatId === undefined) {
-            throw new Error('Required parameter chatId was null or undefined when calling findAllByChatId.');
-        }
+    public findForCustomer(page?: number, size?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<PageDtoUserCustomerServiceDto>;
+    public findForCustomer(page?: number, size?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<PageDtoUserCustomerServiceDto>>;
+    public findForCustomer(page?: number, size?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<PageDtoUserCustomerServiceDto>>;
+    public findForCustomer(page?: number, size?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         if (page !== undefined && page !== null) {
@@ -314,8 +230,8 @@ export class ChatControllerService {
             }
         }
 
-        let localVarPath = `/chats/${this.configuration.encodeParam({name: "chatId", value: chatId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: "uuid"})}`;
-        return this.httpClient.request<PageDtoWsChatMessageDto>('get', `${this.configuration.basePath}${localVarPath}`,
+        let localVarPath = `/services/requests/customers`;
+        return this.httpClient.request<PageDtoUserCustomerServiceDto>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -329,26 +245,18 @@ export class ChatControllerService {
     }
 
     /**
-     * Find all chat by name
-     * @param name 
+     * Find my requests for executor
      * @param page 
      * @param size 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public findAllByName(name: string, page?: number, size?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<PageDtoChatDto>;
-    public findAllByName(name: string, page?: number, size?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<PageDtoChatDto>>;
-    public findAllByName(name: string, page?: number, size?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<PageDtoChatDto>>;
-    public findAllByName(name: string, page?: number, size?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
-        if (name === null || name === undefined) {
-            throw new Error('Required parameter name was null or undefined when calling findAllByName.');
-        }
+    public findForExecutor(page?: number, size?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<PageDtoUserCustomerServiceDto>;
+    public findForExecutor(page?: number, size?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<PageDtoUserCustomerServiceDto>>;
+    public findForExecutor(page?: number, size?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<PageDtoUserCustomerServiceDto>>;
+    public findForExecutor(page?: number, size?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (name !== undefined && name !== null) {
-          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>name, 'name');
-        }
         if (page !== undefined && page !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
             <any>page, 'page');
@@ -396,8 +304,8 @@ export class ChatControllerService {
             }
         }
 
-        let localVarPath = `/chats`;
-        return this.httpClient.request<PageDtoChatDto>('get', `${this.configuration.basePath}${localVarPath}`,
+        let localVarPath = `/services/requests/executors`;
+        return this.httpClient.request<PageDtoUserCustomerServiceDto>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,

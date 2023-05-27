@@ -100,15 +100,15 @@ export class IdentificationsControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<IdentificationDto>;
-    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<IdentificationDto>>;
-    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<IdentificationDto>>;
-    public create4(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+    public create6(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<IdentificationDto>;
+    public create6(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<IdentificationDto>>;
+    public create6(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<IdentificationDto>>;
+    public create6(petId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
-            throw new Error('Required parameter petId was null or undefined when calling create4.');
+            throw new Error('Required parameter petId was null or undefined when calling create6.');
         }
         if (identificationCreateUpdateDto === null || identificationCreateUpdateDto === undefined) {
-            throw new Error('Required parameter identificationCreateUpdateDto was null or undefined when calling create4.');
+            throw new Error('Required parameter identificationCreateUpdateDto was null or undefined when calling create6.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -179,15 +179,15 @@ export class IdentificationsControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public delete3(petId: string, identificationId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
-    public delete3(petId: string, identificationId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
-    public delete3(petId: string, identificationId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
-    public delete3(petId: string, identificationId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
+    public delete4(petId: string, identificationId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
+    public delete4(petId: string, identificationId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
+    public delete4(petId: string, identificationId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
+    public delete4(petId: string, identificationId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
-            throw new Error('Required parameter petId was null or undefined when calling delete3.');
+            throw new Error('Required parameter petId was null or undefined when calling delete4.');
         }
         if (identificationId === null || identificationId === undefined) {
-            throw new Error('Required parameter identificationId was null or undefined when calling delete3.');
+            throw new Error('Required parameter identificationId was null or undefined when calling delete4.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -313,18 +313,18 @@ export class IdentificationsControllerService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<IdentificationDto>;
-    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<IdentificationDto>>;
-    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<IdentificationDto>>;
-    public update2(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+    public update3(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<IdentificationDto>;
+    public update3(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<IdentificationDto>>;
+    public update3(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<IdentificationDto>>;
+    public update3(petId: string, identificationId: string, identificationCreateUpdateDto: IdentificationCreateUpdateDto, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (petId === null || petId === undefined) {
-            throw new Error('Required parameter petId was null or undefined when calling update2.');
+            throw new Error('Required parameter petId was null or undefined when calling update3.');
         }
         if (identificationId === null || identificationId === undefined) {
-            throw new Error('Required parameter identificationId was null or undefined when calling update2.');
+            throw new Error('Required parameter identificationId was null or undefined when calling update3.');
         }
         if (identificationCreateUpdateDto === null || identificationCreateUpdateDto === undefined) {
-            throw new Error('Required parameter identificationCreateUpdateDto was null or undefined when calling update2.');
+            throw new Error('Required parameter identificationCreateUpdateDto was null or undefined when calling update3.');
         }
 
         let localVarHeaders = this.defaultHeaders;

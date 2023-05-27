@@ -14,7 +14,6 @@
 export interface UserShortDto { 
     id?: string;
     avatarUri?: string;
-    email?: string;
     name?: string;
     createdAt?: string;
     updateAt?: string;
