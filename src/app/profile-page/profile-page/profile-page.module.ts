@@ -17,6 +17,10 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { CreatingServiceModalComponent } from '../modals/creating-service-modal/creating-service-modal.component';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { CalendarModule } from 'primeng/calendar';
+import { FileUploadModule } from 'primeng/fileupload';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
+import { PetService } from 'src/app/shared/services/pet.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,10 @@ import { CalendarModule } from 'primeng/calendar';
     InputTextModule,
     InputSwitchModule,
     InputNumberModule,
-    CalendarModule
+    CalendarModule,
+    FileUploadModule,
+    InputTextareaModule,
+    DropdownModule
   ],
   exports: [
     ProfilePageComponent,
@@ -50,7 +57,8 @@ import { CalendarModule } from 'primeng/calendar';
     GTMTemplate,
   ],
   providers:[
-    DialogService
+    DialogService,
+    PetService
   ]
 })
 export class ProfilePageModule {}

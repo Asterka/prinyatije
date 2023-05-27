@@ -10,41 +10,15 @@
       ></button>
     </h1>
     <div class="profile-main__section__body">
-      <card>
-        <ng-template petTemplate="body-template">
-          <h5 class="text-l">Шапка</h5>
-          <span class="ellipsis">text1</span>
-          <span>text2</span>
-        </ng-template>
-      </card>
-      <card>
-        <ng-template petTemplate="body-template">
-          <h5 class="text-l">Шапка</h5>
-          <span class="ellipsis">text1</span>
-          <span>text2</span>
-        </ng-template>
-      </card>
-      <card>
-        <ng-template petTemplate="body-template">
-          <h5 class="text-l">Шапка</h5>
-          <span class="ellipsis">text1</span>
-          <span>text2</span>
-        </ng-template>
-      </card>
-      <card>
-        <ng-template petTemplate="body-template">
-          <h5 class="text-l">Шапка</h5>
-          <span class="ellipsis">text1</span>
-          <span>text2</span>
-        </ng-template>
-      </card>
-      <card>
-        <ng-template petTemplate="body-template">
-          <h5 class="text-l">Шапка</h5>
-          <span class="ellipsis">text1</span>
-          <span>text2</span>
-        </ng-template>
-      </card>
+      <ng-container  *ngFor="let pet of pets">
+        <card [petPhoto]="pet.avatarUri">
+          <ng-template petTemplate="body-template">
+            <h5 class="text-l">{{ pet.name }}</h5>
+            <span class="ellipsis">{{ pet.breed }}</span>
+            <span>{{ formatDate(pet?.dateOfBirth) }}</span>
+          </ng-template>
+        </card>
+      </ng-container>
     </div>
   </section>
 
