@@ -9,12 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { UserShortDto } from './userShortDto';
 
 
-export interface ChatMessageDto { 
-    user?: UserShortDto;
-    value?: string;
+export interface UserExecutorDto { 
+    id?: string;
+    avatarUri?: string;
     createdAt?: string;
+    updateAt?: string;
+    online?: boolean;
 }
 

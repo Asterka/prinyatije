@@ -9,16 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { UserShortDto } from './userShortDto';
 
 
-export interface UserUpdateDto { 
-    name: string;
-    surname: string;
-    communicationType?: string;
-    avatarUri?: string;
-    address?: string;
-    postCode?: string;
-    country?: string;
-    city?: string;
+export interface WsChatMessageDto { 
+    user?: UserShortDto;
+    value?: string;
+    createdAt?: string;
 }
 

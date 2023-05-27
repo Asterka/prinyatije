@@ -18,7 +18,6 @@ import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { RxStompService } from './shared/services/stomp.service';
 import { rxStompServiceFactory } from './shared/services/stomp-factory-service';
 import { PetService } from './shared/services/pet.service';
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -12,10 +12,10 @@ export class PetService {
   ) { }
 
   createPet(pet: PetCreateUpdateDto) {
-    this.petService.create1(pet).subscribe();
+    this.petService.create3(pet).subscribe();
   }
 
   getPets(): Observable<PageDtoPetDto> {
-    return this.petService.findByUserId();
+    return this.petService.findByUserId1();
   }
 }

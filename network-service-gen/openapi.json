@@ -71,6 +71,81 @@
         ]
       }
     },
+    "/services/{id}": {
+      "put": {
+        "tags": [
+          "user-services-controller"
+        ],
+        "summary": "Update service",
+        "operationId": "update_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserServiceCreateUpdateDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserExecutorServiceDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "user-services-controller"
+        ],
+        "summary": "Delete service",
+        "operationId": "delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
     "/pets/{petId}": {
       "get": {
         "tags": [
@@ -112,7 +187,7 @@
           "pets-controller"
         ],
         "summary": "Update pet",
-        "operationId": "update_1",
+        "operationId": "update_2",
         "parameters": [
           {
             "name": "petId",
@@ -157,7 +232,7 @@
           "pets-controller"
         ],
         "summary": "Delete pet",
-        "operationId": "delete",
+        "operationId": "delete_1",
         "parameters": [
           {
             "name": "petId",
@@ -187,7 +262,7 @@
           "identifications-controller"
         ],
         "summary": "Update identification",
-        "operationId": "update_2",
+        "operationId": "update_3",
         "parameters": [
           {
             "name": "petId",
@@ -241,7 +316,7 @@
           "identifications-controller"
         ],
         "summary": "Delete identification",
-        "operationId": "delete_3",
+        "operationId": "delete_4",
         "parameters": [
           {
             "name": "petId",
@@ -298,13 +373,131 @@
         }
       }
     },
+    "/services": {
+      "get": {
+        "tags": [
+          "user-services-controller"
+        ],
+        "summary": "Find my services",
+        "operationId": "findByUserId",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageDtoUserExecutorServiceDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "user-services-controller"
+        ],
+        "summary": "Create service",
+        "operationId": "create_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserServiceCreateUpdateDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserExecutorServiceDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/services/requests": {
+      "post": {
+        "tags": [
+          "user-service-requests-controller"
+        ],
+        "summary": "Create requests",
+        "operationId": "create_2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserServiceRequestCreateDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserCustomerServiceDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
     "/pets": {
       "get": {
         "tags": [
           "pets-controller"
         ],
         "summary": "Find my pets",
-        "operationId": "findByUserId",
+        "operationId": "findByUserId_1",
         "parameters": [
           {
             "name": "page",
@@ -350,7 +543,7 @@
           "pets-controller"
         ],
         "summary": "Create pet",
-        "operationId": "create_1",
+        "operationId": "create_3",
         "requestBody": {
           "content": {
             "application/json": {
@@ -441,7 +634,7 @@
           "vaccinations-controller"
         ],
         "summary": "Create vaccination",
-        "operationId": "create_2",
+        "operationId": "create_4",
         "parameters": [
           {
             "name": "petId",
@@ -543,7 +736,7 @@
           "note-controller"
         ],
         "summary": "Create note",
-        "operationId": "create_3",
+        "operationId": "create_5",
         "parameters": [
           {
             "name": "petId",
@@ -625,7 +818,7 @@
           "identifications-controller"
         ],
         "summary": "Create identification",
-        "operationId": "create_4",
+        "operationId": "create_6",
         "parameters": [
           {
             "name": "petId",
@@ -727,7 +920,7 @@
           "clinical-examination-controller"
         ],
         "summary": "Create clinical-examination",
-        "operationId": "create_5",
+        "operationId": "create_7",
         "parameters": [
           {
             "name": "petId",
@@ -901,7 +1094,7 @@
           "chat-controller"
         ],
         "summary": "Create chat",
-        "operationId": "create_6",
+        "operationId": "create_8",
         "requestBody": {
           "content": {
             "application/json": {
@@ -922,6 +1115,46 @@
                 }
               }
             }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/chats/{chatId}/messages": {
+      "post": {
+        "tags": [
+          "chat-controller"
+        ],
+        "summary": "Create message",
+        "operationId": "createMessages",
+        "parameters": [
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
           }
         },
         "security": [
@@ -1030,6 +1263,209 @@
         }
       }
     },
+    "/services/search": {
+      "get": {
+        "tags": [
+          "user-services-controller"
+        ],
+        "summary": "Find services by name",
+        "operationId": "search",
+        "parameters": [
+          {
+            "name": "pet-type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "DOG",
+                "CAT",
+                "PARROTS",
+                "HAMSTER",
+                "SNAKE"
+              ]
+            }
+          },
+          {
+            "name": "serviceType",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageDtoUserExecutorServiceDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/services/requests/executors": {
+      "get": {
+        "tags": [
+          "user-service-requests-controller"
+        ],
+        "summary": "Find my requests for executor",
+        "operationId": "findForExecutor",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageDtoUserCustomerServiceDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/services/requests/customers": {
+      "get": {
+        "tags": [
+          "user-service-requests-controller"
+        ],
+        "summary": "Find my requests for customers",
+        "operationId": "findForCustomer",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageDtoUserCustomerServiceDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/pets/types": {
+      "get": {
+        "tags": [
+          "pets-controller"
+        ],
+        "summary": "Find all pet types",
+        "operationId": "findAllPetTypes",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "DOG",
+                      "CAT",
+                      "PARROTS",
+                      "HAMSTER",
+                      "SNAKE"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
     "/chats/{chatId}": {
       "get": {
         "tags": [
@@ -1074,7 +1510,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PageDtoChatMessageDto"
+                  "$ref": "#/components/schemas/PageDtoWsChatMessageDto"
                 }
               }
             }
@@ -1093,7 +1529,7 @@
           "vaccinations-controller"
         ],
         "summary": "Delete vaccination",
-        "operationId": "delete_1",
+        "operationId": "delete_2",
         "parameters": [
           {
             "name": "petId",
@@ -1132,7 +1568,7 @@
           "note-controller"
         ],
         "summary": "Delete note",
-        "operationId": "delete_2",
+        "operationId": "delete_3",
         "parameters": [
           {
             "name": "petId",
@@ -1171,7 +1607,7 @@
           "clinical-examination-controller"
         ],
         "summary": "Delete clinical-examination",
-        "operationId": "delete_4",
+        "operationId": "delete_5",
         "parameters": [
           {
             "name": "petId",
@@ -1220,6 +1656,9 @@
           "surname": {
             "type": "string"
           },
+          "communicationType": {
+            "type": "string"
+          },
           "avatarUri": {
             "type": "string"
           },
@@ -1245,6 +1684,9 @@
             "format": "uuid"
           },
           "avatarUri": {
+            "type": "string"
+          },
+          "communicationType": {
             "type": "string"
           },
           "email": {
@@ -1281,11 +1723,123 @@
           }
         }
       },
+      "UserServiceCreateUpdateDto": {
+        "type": "object",
+        "properties": {
+          "petType": {
+            "type": "string",
+            "enum": [
+              "DOG",
+              "CAT",
+              "PARROTS",
+              "HAMSTER",
+              "SNAKE"
+            ]
+          },
+          "serviceType": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "departure": {
+            "type": "boolean"
+          },
+          "priceFixed": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMin": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMax": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "UserExecutorDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "avatarUri": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updateAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "online": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UserExecutorServiceDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "user": {
+            "$ref": "#/components/schemas/UserExecutorDto"
+          },
+          "petType": {
+            "type": "string",
+            "enum": [
+              "DOG",
+              "CAT",
+              "PARROTS",
+              "HAMSTER",
+              "SNAKE"
+            ]
+          },
+          "serviceType": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "departure": {
+            "type": "boolean"
+          },
+          "priceFixed": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMin": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMax": {
+            "type": "number",
+            "format": "double"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updateAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
       "PetCreateUpdateDto": {
         "required": [
           "breed",
+          "dateOfBirth",
           "name",
-          "sex"
+          "sex",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -1297,6 +1851,16 @@
           },
           "sex": {
             "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "DOG",
+              "CAT",
+              "PARROTS",
+              "HAMSTER",
+              "SNAKE"
+            ]
           },
           "avatarUri": {
             "type": "string"
@@ -1319,6 +1883,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "DOG",
+              "CAT",
+              "PARROTS",
+              "HAMSTER",
+              "SNAKE"
+            ]
           },
           "avatarUri": {
             "type": "string"
@@ -1366,9 +1940,6 @@
             "format": "uuid"
           },
           "avatarUri": {
-            "type": "string"
-          },
-          "email": {
             "type": "string"
           },
           "name": {
@@ -1478,6 +2049,9 @@
           "surname": {
             "type": "string"
           },
+          "communicationType": {
+            "type": "string"
+          },
           "avatarUri": {
             "type": "string"
           },
@@ -1492,6 +2066,92 @@
           },
           "city": {
             "type": "string"
+          }
+        }
+      },
+      "UserServiceRequestCreateDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "UserCustomerDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "avatarUri": {
+            "type": "string"
+          },
+          "communicationType": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updateAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "online": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UserCustomerServiceDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "user": {
+            "$ref": "#/components/schemas/UserCustomerDto"
+          },
+          "petType": {
+            "type": "string",
+            "enum": [
+              "DOG",
+              "CAT",
+              "PARROTS",
+              "HAMSTER",
+              "SNAKE"
+            ]
+          },
+          "serviceType": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "departure": {
+            "type": "boolean"
+          },
+          "priceFixed": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMin": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMax": {
+            "type": "number",
+            "format": "double"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updateAt": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -1732,13 +2392,13 @@
           }
         }
       },
-      "PageDtoPetDto": {
+      "PageDtoUserExecutorServiceDto": {
         "type": "object",
         "properties": {
           "content": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PetDto"
+              "$ref": "#/components/schemas/UserExecutorServiceDto"
             }
           },
           "paging": {
@@ -1762,6 +2422,50 @@
           },
           "after": {
             "type": "string"
+          }
+        }
+      },
+      "PageDtoUserCustomerServiceDto": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserCustomerServiceDto"
+            }
+          },
+          "paging": {
+            "$ref": "#/components/schemas/Paging"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "PageDtoPetDto": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PetDto"
+            }
+          },
+          "paging": {
+            "$ref": "#/components/schemas/Paging"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
@@ -1853,28 +2557,13 @@
           }
         }
       },
-      "ChatMessageDto": {
-        "type": "object",
-        "properties": {
-          "user": {
-            "$ref": "#/components/schemas/UserShortDto"
-          },
-          "value": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "PageDtoChatMessageDto": {
+      "PageDtoWsChatMessageDto": {
         "type": "object",
         "properties": {
           "content": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ChatMessageDto"
+              "$ref": "#/components/schemas/WsChatMessageDto"
             }
           },
           "paging": {
@@ -1887,6 +2576,21 @@
           "pageNumber": {
             "type": "integer",
             "format": "int32"
+          }
+        }
+      },
+      "WsChatMessageDto": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/UserShortDto"
+          },
+          "value": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       }

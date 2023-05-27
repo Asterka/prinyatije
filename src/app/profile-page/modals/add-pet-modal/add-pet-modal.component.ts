@@ -42,9 +42,10 @@ export class AddPetModalComponent implements OnInit {
     let newPet: PetCreateUpdateDto = {
       name: this.addForm.value.name,
       sex: this.addForm.value.sex,
+      type: 'DOG',
       breed: this.addForm.value.breed,
       // type: this.addForm.value.type,
-      avatarUri: this.addForm.value.files.objectURL.changingThisBreaksApplicationSecurity,
+      avatarUri: this.addForm.value.files,
       dateOfBirth: this.addForm.value.birthday,
     }
     return newPet;

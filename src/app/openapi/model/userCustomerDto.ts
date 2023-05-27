@@ -9,14 +9,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ChatMessageDto } from './chatMessageDto';
-import { Paging } from './paging';
 
 
-export interface PageDtoChatMessageDto { 
-    content?: Array<ChatMessageDto>;
-    paging?: Paging;
-    pageSize?: number;
-    pageNumber?: number;
+export interface UserCustomerDto { 
+    id?: string;
+    avatarUri?: string;
+    communicationType?: string;
+    createdAt?: string;
+    updateAt?: string;
+    online?: boolean;
 }
 
