@@ -17,6 +17,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { CreatingServiceModalComponent } from '../modals/creating-service-modal/creating-service-modal.component';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { CalendarModule } from 'primeng/calendar';
+import { TabViewModule } from 'primeng/tabview';
 import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
@@ -45,6 +46,8 @@ import { PetService } from 'src/app/shared/services/pet.service';
     InputTextModule,
     InputSwitchModule,
     InputNumberModule,
+    TabViewModule,
+    CalendarModule,
     CalendarModule,
     FileUploadModule,
     InputTextareaModule,
