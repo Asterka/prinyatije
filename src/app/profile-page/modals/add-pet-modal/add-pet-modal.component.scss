@@ -13,3 +13,74 @@
     border-radius: 8px;
   }
 }
+::ng-deep {
+  .p-fileupload {
+    position: relative;
+  }
+
+  .p-fileupload-buttonbar > span {
+    z-index: 1;
+  }
+
+  .p-fileupload-buttonbar {
+    text-align: center;
+    background: var(--main-background) !important;
+    display: flex;
+    flex-direction: column;
+    border: none !important;
+  }
+
+  .p-fileupload-content {
+    border-style: dashed !important;
+    background-color: transparent;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px !important;
+  }
+
+  .p-fileupload-row > div {
+    padding: 0;
+  }
+
+  .p-fileupload-files {
+    width: 99%;
+    position: absolute;
+    top: 110px;
+    min-height: 144px;
+    overflow-y: scroll;
+  }
+
+  .p-fileupload-files div{
+    max-height: 100px;
+    padding-right: 10px;
+  }
+
+  .p-fileupload-content .p-progressbar {
+    width: 100%;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+  }
+
+  .p-fileupload-choose {
+    background-color: transparent;
+    color: var(--primary-700);
+    border: 1px solid;
+    align-self: center;
+  }
+  .p-element .p-icon-wrapper {
+    margin-right: 16px;
+  }
+  .after-load .p-fileupload-buttonbar {
+    display: none;
+  }
+  .after-load .p-fileupload-content{
+    border: 0;
+  }
+  .after-load .p-fileupload-files{
+    top:0;
+  }
+}

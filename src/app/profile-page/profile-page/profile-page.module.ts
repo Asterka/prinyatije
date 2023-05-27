@@ -18,6 +18,10 @@ import { CreatingServiceModalComponent } from '../modals/creating-service-modal/
 import { InputNumberModule } from 'primeng/inputnumber';
 import { CalendarModule } from 'primeng/calendar';
 import { TabViewModule } from 'primeng/tabview';
+import { FileUploadModule } from 'primeng/fileupload';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
+import { PetService } from 'src/app/shared/services/pet.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { TabViewModule } from 'primeng/tabview';
     InputSwitchModule,
     InputNumberModule,
     TabViewModule,
-    CalendarModule
+    CalendarModule,
+    CalendarModule,
+    FileUploadModule,
+    InputTextareaModule,
+    DropdownModule
   ],
   exports: [
     ProfilePageComponent,
@@ -52,7 +60,8 @@ import { TabViewModule } from 'primeng/tabview';
     GTMTemplate,
   ],
   providers:[
-    DialogService
+    DialogService,
+    PetService
   ]
 })
 export class ProfilePageModule {}

@@ -1,4 +1,4 @@
-import { Component, ContentChildren, QueryList, TemplateRef } from '@angular/core';
+import { Component, ContentChildren, Input, QueryList, TemplateRef } from '@angular/core';
 import { GTMTemplate } from '../shared/directives/template-directive';
 
 @Component({
@@ -7,6 +7,7 @@ import { GTMTemplate } from '../shared/directives/template-directive';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
+  @Input() petPhoto: string | undefined = '';
   @ContentChildren(GTMTemplate) templates?: QueryList<any>;
 
   /* Шаблоны внутри */

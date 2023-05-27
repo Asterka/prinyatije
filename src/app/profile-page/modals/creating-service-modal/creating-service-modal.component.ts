@@ -31,7 +31,7 @@ export class CreatingServiceModalComponent implements OnInit {
 
   }
 
-  addJob() {
+  addService() {
     
   }
 }

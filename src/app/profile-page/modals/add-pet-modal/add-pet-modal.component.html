@@ -9,27 +9,87 @@
     optionValue="value"
   ></p-selectButton>
 
-  <span class="w-full flex justify-content-between" style="gap: 1rem">
-    <span class="flex flex-column flex-grow-1 mt-2">
+  <div class="w-full flex justify-content-between" style="gap: 1rem">
+    <span class="flex flex-column flex-grow-1 mt-2" style="max-width: 273px;">
       <label class="text-sm text-normal">Имя</label>
-      <input class="form__input p-inputtext mt-2" type="text" pInputText/>
+      <input class="p-inputtext mt-2" type="text" pInputText formControlName="name"/>
     </span>
-    <span class="flex flex-column flex-grow-1 mt-2">
-      <label class="text-sm text-normal">Название</label>
-      <input class="form__input p-inputtext mt-2" type="text" pInputText/>
+    <span class="flex flex-column flex-grow-1 mt-2 p-fluid">
+      <label class="text-sm text-normal">Тип</label>
+      <p-dropdown class="mt-2" [options]="types" formControlName="type"></p-dropdown>
     </span>
-  </span>
+  </div>
 
-  <span class="w-full flex justify-content-between" style="gap: 1rem">
-    <span class="flex flex-column flex-grow-1 mt-2">
+  <div class="w-full flex justify-content-between mb-6" style="gap: 1rem">
+    <span class="flex flex-column flex-grow-1 mt-2 p-fluid" style="max-width: 273px;">
       <label class="text-sm text-normal">Порода</label>
-      <input class="form__input p-inputtext mt-2" type="text" pInputText/>
+      <input pInputText class="mt-2" formControlName="breed">
     </span>
     <span class="flex flex-column justify-content-between flex-grow-1 mt-2">
       <label class="text-sm text-normal">День рождения</label>
-      <p-calendar appendTo="body" class="p-fluid"></p-calendar>
+      <p-calendar appendTo="body" class="p-fluid" formControlName="birthday"></p-calendar>
     </span>
+  </div>
+  <p-fileUpload #fileUpload name="demo[]" url="./upload.php"
+    [showUploadButton]="false"
+    [showCancelButton]="false"
+    class="gtm-custom-fileupload"
+    chooseLabel="Добавить аватарку"
+    [customUpload]="true"
+    (onSelect)="onSelect($event)"
+  >
+  <ng-template pTemplate="toolbar">
+  <span class="text-xs normal text-center info-block__title p-2">Рекомендуем архивировать файлы перед загрузкой</span>
+  </ng-template>
+  <ng-template let-file pTemplate="file">
+  <div class="p-fileupload-row ng-star-inserted pt-3" *ngIf="!file['isError']">
+  <span class="info-block">
+  <p class="info-block__content">{{file.name}}</p>
   </span>
+  <div class="p-0">
+  <!-- <button pButton *ngIf="!isUploaded(file)" class="p-button-text p-button-icon" icon="pi pi-trash"
+    (click)="remove($event, file)"></button>
+  <button pButton *ngIf="hasError(file)" class="p-button-text p-button-icon" icon="pi pi-refresh"
+    label="Попробовать ещё" (click)="uploadFileAgain(file)"></button>
+  <button pButton *ngIf="isOk(file)" class="p-button-text p-button-icon" icon="pi pi-check"></button> -->
+  </div>
+  </div>
+  </ng-template>
+</p-fileUpload>
 
+  <!-- <span>
+    <div class="mt-6">
+      Дополнительная информация может быть полезна при передаче питомца на время процедуры или при передержке.
+    </div>
+    <div class="w-full p-fluid mt-1">
+      <label class="text-sm">Пищевые привычки</label>
+      <textarea rows="5" cols="30" pInputTextarea formControlName="nutritionHabits"></textarea>
+    </div>
+  </span>
+  <span class="mt-3">
+    <div class="w-full p-fluid mt-1">
+      <label class="text-sm">Особенности ухода</label>
+      <textarea rows="5" cols="30" pInputTextarea formControlName="nutritionHabits"></textarea>
+    </div>
+  </span> -->
 
+<section class="dynamic-modal__footer w-full flex justify-content-end mt-6">
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Отмена"
+    class="p-button-outlined mr-3"
+    (click)="cancelAdding()"
+  ></button>
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Добавить"
+    [disabled]="!addForm.valid"
+    (click)="addPet()"
+  ></button>
+</section>
 </form>
+
