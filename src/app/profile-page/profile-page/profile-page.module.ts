@@ -17,6 +17,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { CreatingServiceModalComponent } from '../modals/creating-service-modal/creating-service-modal.component';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { CalendarModule } from 'primeng/calendar';
+import { TabViewModule } from 'primeng/tabview';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { CalendarModule } from 'primeng/calendar';
     InputTextModule,
     InputSwitchModule,
     InputNumberModule,
+    TabViewModule,
     CalendarModule
   ],
   exports: [
