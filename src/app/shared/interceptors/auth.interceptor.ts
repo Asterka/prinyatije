@@ -15,7 +15,29 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(
     private readonly loginService: LoginService,
     public networkResolver: NetworkErrorResolverService
-  ) {}
+  ) {
+    //FETCH API PATCH
+    (() => {
+      const {fetch: originalFetch} = window;
+      window.fetch = async (input, init = {}) => {
+        try {
+          const newHeaders = new Headers();
+          let token = localStorage.getItem('token');
+          if (token) {
+            newHeaders.set('Authorization', token);
+          }
+          return await originalFetch(`${input}`, {
+            ...init,
+            headers: newHeaders,
+          });
+        } catch (error) {
+          console.error(error);
+          throw error;
+        }
+      };
+    })();
+  }
+
 
   intercept(
     req: HttpRequest<unknown>,

@@ -1,1 +1,14 @@
-<p>chat-profile works!</p>
+<section class="chat-main">
+  <div class="chat-sections">
+    <p-tabView styleClass="w-100 p-3 h-full flex-tabview">
+      <p-tabPanel header="Лента"> </p-tabPanel>
+      <p-tabPanel header="Болталка">
+        <section class="h-full w-100">
+          <chat-messages
+            [messages]="(this.chatFacade.messages$ | async) || []"
+          ></chat-messages>
+        </section>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</section>

@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 README.md
 api.module.ts
 api/api.ts
@@ -20,7 +21,6 @@ git_push.sh
 index.ts
 model/chatCreateUpdateDto.ts
 model/chatDto.ts
-model/chatMessageDto.ts
 model/clinicalExaminationCreateUpdateDto.ts
 model/clinicalExaminationDto.ts
 model/emailNotificationCreateDto.ts
@@ -32,13 +32,13 @@ model/models.ts
 model/noteCreateUpdateDto.ts
 model/noteDto.ts
 model/pageDtoChatDto.ts
-model/pageDtoChatMessageDto.ts
 model/pageDtoClinicalExaminationDto.ts
 model/pageDtoNoteDto.ts
 model/pageDtoPetDto.ts
 model/pageDtoUserCustomerServiceDto.ts
 model/pageDtoUserExecutorServiceDto.ts
 model/pageDtoVaccinationDto.ts
+model/pageDtoWsChatMessageDto.ts
 model/paging.ts
 model/petCreateUpdateDto.ts
 model/petDto.ts
@@ -55,5 +55,6 @@ model/userShortDto.ts
 model/userUpdateDto.ts
 model/vaccinationCreateUpdateDto.ts
 model/vaccinationDto.ts
+model/wsChatMessageDto.ts
 param.ts
 variables.ts

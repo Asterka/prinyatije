@@ -16,6 +16,9 @@ export interface UserServiceCreateUpdateDto {
     serviceType?: string;
     message?: string;
     departure?: boolean;
+    priceFixed?: number;
+    priceMin?: number;
+    priceMax?: number;
 }
 export namespace UserServiceCreateUpdateDto {
     export type PetTypeEnum = 'DOG' | 'CAT' | 'PARROTS' | 'HAMSTER' | 'SNAKE';

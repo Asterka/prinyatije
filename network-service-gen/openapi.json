@@ -1124,6 +1124,46 @@
         ]
       }
     },
+    "/chats/{chatId}/messages": {
+      "post": {
+        "tags": [
+          "chat-controller"
+        ],
+        "summary": "Create message",
+        "operationId": "createMessages",
+        "parameters": [
+          {
+            "name": "chatId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
     "/auth/sign-in": {
       "post": {
         "tags": [
@@ -1470,7 +1510,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PageDtoChatMessageDto"
+                  "$ref": "#/components/schemas/PageDtoWsChatMessageDto"
                 }
               }
             }
@@ -1704,6 +1744,18 @@
           },
           "departure": {
             "type": "boolean"
+          },
+          "priceFixed": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMin": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMax": {
+            "type": "number",
+            "format": "double"
           }
         }
       },
@@ -1759,6 +1811,18 @@
           "departure": {
             "type": "boolean"
           },
+          "priceFixed": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMin": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMax": {
+            "type": "number",
+            "format": "double"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -1772,6 +1836,7 @@
       "PetCreateUpdateDto": {
         "required": [
           "breed",
+          "dateOfBirth",
           "name",
           "sex",
           "type"
@@ -2067,6 +2132,18 @@
           },
           "departure": {
             "type": "boolean"
+          },
+          "priceFixed": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMin": {
+            "type": "number",
+            "format": "double"
+          },
+          "priceMax": {
+            "type": "number",
+            "format": "double"
           },
           "createdAt": {
             "type": "string",
@@ -2480,28 +2557,13 @@
           }
         }
       },
-      "ChatMessageDto": {
-        "type": "object",
-        "properties": {
-          "user": {
-            "$ref": "#/components/schemas/UserShortDto"
-          },
-          "value": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "PageDtoChatMessageDto": {
+      "PageDtoWsChatMessageDto": {
         "type": "object",
         "properties": {
           "content": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ChatMessageDto"
+              "$ref": "#/components/schemas/WsChatMessageDto"
             }
           },
           "paging": {
@@ -2514,6 +2576,21 @@
           "pageNumber": {
             "type": "integer",
             "format": "int32"
+          }
+        }
+      },
+      "WsChatMessageDto": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/UserShortDto"
+          },
+          "value": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       }

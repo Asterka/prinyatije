@@ -17,7 +17,7 @@ export interface PetCreateUpdateDto {
     sex: string;
     type: PetCreateUpdateDto.TypeEnum;
     avatarUri?: string;
-    dateOfBirth?: string;
+    dateOfBirth: string;
     coat?: string;
     coatVariety?: string;
 }

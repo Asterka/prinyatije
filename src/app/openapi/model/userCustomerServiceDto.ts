@@ -19,6 +19,9 @@ export interface UserCustomerServiceDto {
     serviceType?: string;
     message?: string;
     departure?: boolean;
+    priceFixed?: number;
+    priceMin?: number;
+    priceMax?: number;
     createdAt?: string;
     updateAt?: string;
 }

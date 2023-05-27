@@ -1,0 +1,37 @@
+/**
+ * @name media-devices-mixin
+ * @description
+ * This mixin is used to create media queries for different devices
+ * @param {string} $breakpoint - The name of the breakpoint
+ * @example
+ * @include devices(desktop) {
+ *   // styles for desktop
+ * }
+ * @include devices(tablet) {
+ *   // styles for tablet
+ * }
+ * @include devices(mobile) {
+ *   // styles for mobile
+ * }
+ */
+ @mixin devices($breakpoint) {
+  //the name of the mixin is devices
+
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 481px) {
+      @content;
+    }
+  }
+}

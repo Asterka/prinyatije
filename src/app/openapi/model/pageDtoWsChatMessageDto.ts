@@ -9,12 +9,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { UserShortDto } from './userShortDto';
+import { Paging } from './paging';
+import { WsChatMessageDto } from './wsChatMessageDto';
 
 
-export interface ChatMessageDto { 
-    user?: UserShortDto;
-    value?: string;
-    createdAt?: string;
+export interface PageDtoWsChatMessageDto { 
+    content?: Array<WsChatMessageDto>;
+    paging?: Paging;
+    pageSize?: number;
+    pageNumber?: number;
 }
 
