@@ -19,10 +19,12 @@ import { RxStompService } from './shared/services/stomp.service';
 import { rxStompServiceFactory } from './shared/services/stomp-factory-service';
 import { PetService } from './shared/services/pet.service';
 import { UserServicesService } from './shared/services/user-services.service';
+import { PersonalServicesListComponent } from './personal-services/personal-services-list/personal-services-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainNavPageComponent,
+    PersonalServicesListComponent,
    ],
   imports: [
     CommonModule,
