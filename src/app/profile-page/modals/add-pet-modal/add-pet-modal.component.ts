@@ -11,12 +11,13 @@ import { PetService } from 'src/app/shared/services/pet.service';
 })
 export class AddPetModalComponent implements OnInit {
   addForm: FormGroup = new FormGroup({});
-  types = [];
+  types: string[] = [];
 
   constructor(private fb: FormBuilder, private petService: PetService, public modalRef: DynamicDialogRef) {}
 
   ngOnInit(): void {
     this.initForm();
+    this.getAllTypes();
   }
 
   initForm() {
@@ -42,16 +43,22 @@ export class AddPetModalComponent implements OnInit {
     let newPet: PetCreateUpdateDto = {
       name: this.addForm.value.name,
       sex: this.addForm.value.sex,
-      type: 'DOG',
       breed: this.addForm.value.breed,
-      // type: this.addForm.value.type,
-      avatarUri: this.addForm.value.files,
+      type: this.addForm.value.type,
+      avatarUri: this.addForm.value.files.objectURL.changingThisBreaksApplicationSecurity,
       dateOfBirth: this.addForm.value.birthday,
     }
     return newPet;
   }
 
   onSelect(event: any) {
+
     this.addForm.get('files')?.setValue(event.currentFiles[0]);
+  }
+
+  getAllTypes() {
+    this.petService.getPetTypes().subscribe(types => {
+      this.types = types;
+    })
   }
 }

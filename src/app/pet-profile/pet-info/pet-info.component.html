@@ -1,4 +1,23 @@
 <section class="pet-info">
-  <img/>
-
+  <div>
+    <button 
+      pButton 
+      class="p-button-text text-color-secondary" 
+      label="Назад к профилю" 
+      icon="pi pi-arrow-left"
+      (click)="returnToProfile()"
+      
+    ></button>
+  </div>
+  <div class="flex justify-content-between">
+    <div class="mr-3" style="width: 60px; height: 60px;">
+      <img [src]="pet.avatarUri">
+    </div>
+    <div>
+      <div class="text-xl text-bold">{{ pet.name }}</div>
+      <div>
+        <button pButton class="p-button-text text-sm text-semibold p-button-sm" icon="pi pi-pencil" iconPos="left" label="редактировать профиль"></button>
+      </div>
+    </div>
+  </div>
 </section>

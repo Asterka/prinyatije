@@ -18,6 +18,7 @@ import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { RxStompService } from './shared/services/stomp.service';
 import { rxStompServiceFactory } from './shared/services/stomp-factory-service';
 import { PetService } from './shared/services/pet.service';
+import { UserServicesService } from './shared/services/user-services.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { PetService } from './shared/services/pet.service';
   providers: [
     DialogService,
     PetService,
+    UserServicesService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     NetworkErrorResolverService,
     {

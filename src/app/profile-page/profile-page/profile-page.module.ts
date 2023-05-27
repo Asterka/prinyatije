@@ -22,8 +22,8 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { PetService } from 'src/app/shared/services/pet.service';
+import { MenuModule } from 'primeng/menu';
 import { ChatMessagesComponent } from '../chat-profile/chat-messages-component/chat-messages/chat-messages.component';
-
 @NgModule({
   declarations: [
     ProfilePageComponent,
@@ -54,6 +54,7 @@ import { ChatMessagesComponent } from '../chat-profile/chat-messages-component/c
     FileUploadModule,
     InputTextareaModule,
     DropdownModule,
+    MenuModule,
   ],
   exports: [
     ProfilePageComponent,
