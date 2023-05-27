@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import dayjs from 'dayjs';
 import { PetDto } from 'src/app/openapi';
 import { PetService } from 'src/app/shared/services/pet.service';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
 
 @Component({
   selector: 'pet-info',
@@ -33,5 +36,15 @@ export class PetInfoComponent implements OnInit {
 
   returnToProfile(){
     this.router.navigate(['profile']);
+  }
+
+  getPerBirthday(date: string | undefined) {
+    return dayjs(dayjs(date)).format('DD/MM/YYYY');
+  }
+
+  getPetAge(date: string | undefined) {
+    dayjs.extend(relativeTime);
+
+    return dayjs(dayjs(date)).fromNow(true);
   }
 }

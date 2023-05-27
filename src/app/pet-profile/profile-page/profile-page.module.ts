@@ -17,6 +17,9 @@ import { ChipInformationComponent } from '../pet-procedures/chip-information/chi
 import { ClinicalExaminationComponent } from '../pet-procedures/clinical-examination/clinical-examination.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { TooltipModule } from 'primeng/tooltip';
+import { ChatMessagesComponent } from '../chat-profile/chat-messages-component/chat-messages/chat-messages.component';
+import { FormsModule } from '@angular/forms';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { TooltipModule } from 'primeng/tooltip';
     VaccinationsComponent,
     ChipInformationComponent,
     ClinicalExaminationComponent,
+    ChatMessagesComponent,
   ],
   imports: [
     CommonModule,
@@ -39,13 +43,16 @@ import { TooltipModule } from 'primeng/tooltip';
     TabViewModule,
     TableModule,
     SkeletonModule,
-    TooltipModule
+    TooltipModule,
+    FormsModule,
+    InputTextareaModule
   ],
   exports: [
     ProfilePageComponent,
     ChatProfileComponent,
     CardSectionsComponent,
     GTMTemplate,
+
   ],
 })
 export class PetProfilePageModule {}

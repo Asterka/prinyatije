@@ -2,14 +2,14 @@
 
 .chat-main {
   width: 25vw;
-  height: 100vh;
+  height: calc(100vh - 60px);
 
   @include devices(tablet) {
     display: none;
   }
 
   position: absolute;
-  top: 0px;
+  top: 60px;
   right: 0px;
 }
 
