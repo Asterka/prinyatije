@@ -19,6 +19,9 @@ import { RxStompService } from './shared/services/stomp.service';
 import { rxStompServiceFactory } from './shared/services/stomp-factory-service';
 import { PetService } from './shared/services/pet.service';
 import { UserServicesService } from './shared/services/user-services.service';
+import { PrivateServicesModule } from './private-services/private-services.module';
+import { UserService } from './shared/services/user.service';
+import { GTMTemplate } from './profile-page/shared/directives/template-directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,12 +40,13 @@ import { UserServicesService } from './shared/services/user-services.service';
     HttpClientModule,
     RegistrationModule,
     BrowserAnimationsModule,
-    DynamicDialogModule
+    DynamicDialogModule,
   ],
   providers: [
     DialogService,
     PetService,
     UserServicesService,
+    UserService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     NetworkErrorResolverService,
     {

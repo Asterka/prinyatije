@@ -6,7 +6,6 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { ChatProfileComponent } from '../chat-profile/chat-profile.component';
 import { CardSectionsComponent } from '../card-sections/card-sections.component';
 import { CardComponent } from '../card/card.component';
-import { ProfileHeaderComponent } from '../profile-header/profile-header.component';
 import { ButtonModule } from 'primeng/button';
 import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { AddPetModalComponent } from '../modals/add-pet-modal/add-pet-modal.component';
@@ -24,6 +23,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { PetService } from 'src/app/shared/services/pet.service';
 import { MenuModule } from 'primeng/menu';
 import { ChatMessagesComponent } from '../chat-profile/chat-messages-component/chat-messages/chat-messages.component';
+import { ProfileHeaderComponent } from '../profile-header/profile-header.component';
 @NgModule({
   declarations: [
     ProfilePageComponent,

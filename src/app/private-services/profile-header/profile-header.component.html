@@ -21,14 +21,14 @@
             </span>
           </div>
         </span>
-        <div class="mt-3 text-color-secondary text-sm">
+        <div class="mt-3 text-bold text-base">
           {{ service.serviceType }} 
         </div>
         <div class="mt-3 text-color-secondary text-sm">
           {{ service.message }} 
         </div>
       </section>
-      <section class="card__request w-full flex flex-column align-items-end" *ngIf="isRequest">
+      <section class="card__request w-full flex flex-column align-items-end">
         <div>
           <button pButton class="p-button" label="Отправить заявку"></button>
         </div>

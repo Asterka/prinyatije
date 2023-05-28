@@ -1,0 +1,38 @@
+<section class="profile-main mt-5">
+  <section class="profile-main__section">
+    <div class="profile-main__section__body">
+      <div class="text-bold text-l w-full">Частные услуги</div>
+      <div
+        class="p-input-icon-left p-input-icon-right p-fluid w-full"
+        style="position: relative"
+      >
+        <button
+          pButton
+          class="p-button-icon p-button-text"
+          icon="pi pi-search"
+          style="position: absolute; left: 0; color: var(--text-secondary)"
+        ></button>
+        <button
+          pButton
+          class="p-button-icon p-button-text"
+          icon="pi pi-times"
+          style="position: absolute; right: 0; color: var(--text-secondary)"
+          (click)="search.value = ''; searchService(search.value)"
+        ></button>
+        <input
+          #search
+          pInputText
+          class="p-inputtext p-fluid"
+          type="text"
+          placeholder="Поиск"
+          (change)="searchService(search.value)"
+        />
+      </div>
+    </div>
+    <section class="w-full mt-5">
+      <div class="card w-full mt-4" *ngFor="let service of userServices">
+        <profile-header [service]="service" style="width: 100%;"></profile-header>
+      </div>
+    </section>
+  </section>
+</section>

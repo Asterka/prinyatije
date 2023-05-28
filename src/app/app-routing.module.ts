@@ -29,6 +29,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'privateServices',
+    loadChildren: () =>
+      import('./private-services/private-services.module').then(
+        (m) => m.PrivateServicesModule
+      ),
+  },
+  {
     path: 'services',
     loadChildren: () =>
       import('./services-page/services-page/services-page.module').then(

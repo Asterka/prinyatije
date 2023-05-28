@@ -10,13 +10,9 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class ProfileHeaderComponent implements OnInit {
   _servive: UserExecutorServiceDto = {};
-
   user: UserDto = {};
-  @Input() isRequest: boolean = false;
-  @Input() set inUser(user: UserDto) {
-    this.user = user;
-  }
   @Input() set service(service: UserExecutorServiceDto) {
+    console.log(service)
     this._servive = service;
   };
 

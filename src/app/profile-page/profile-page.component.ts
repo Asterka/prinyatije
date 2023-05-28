@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../auth/services/login.service';
+import { UserDto } from '../openapi';
 
 @Component({
   selector: 'profile-page',
@@ -7,6 +8,7 @@ import { LoginService } from '../auth/services/login.service';
   styleUrls: ['./profile-page.component.scss'],
 })
 export class ProfilePageComponent  implements OnInit {
+  user: UserDto = {};
 
   constructor(private loginService: LoginService) {
 
@@ -14,10 +16,12 @@ export class ProfilePageComponent  implements OnInit {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    console.log(this.getMe())
+    this.getMe();
   }
 
   getMe() {
-    this.loginService.getUser();
+    this.loginService.getUser().subscribe(user => {
+      this.user = user;
+    });
   }
 }

@@ -25,11 +25,31 @@
         <div>Порода: {{ pet.breed }}</div>
         <div>День рождения: {{ getPerBirthday(pet.dateOfBirth) }}</div>
         <div>Возраст: {{ getPetAge(pet.dateOfBirth) }}</div>
+        <div class="mt-3">
+          <div class="text-base text-bold">Пищевые привычки</div>
+          <div class="text-base text-normal">корм Wellness Cat&Co</div>
+        </div>
+        <div class="mt-3">
+          <div class="text-base text-bold">Особенности ухода</div>
+          <div class="text-base text-normal">ECO-Premium с запахом персика</div>
+        </div>
+        <div class="mt-3">
+          <div class="text-base text-bold">Вязка</div>
+          <div class="text-base text-normal">Вы можете найти партнёра своему питомцу.</div>
+          <div class="mt-3">
+            <button
+              pButton
+              class="p-button-outlined p-button-icon"
+              label="Искать партнера"
+              style="color: #8A61FF"
+            ></button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   <section class="flex justify-content-center mb-3" style="max-width: 260px;">
-    <div>
+    <div (click)="searchService(pet.type)">
         <div
         class="card flex justify-content-center align-items-center"
       >

@@ -50,9 +50,9 @@ export class CreatingServiceModalComponent implements OnInit {
       serviceType: this.creatingForm.value.serviceType,
       message: this.creatingForm.value.message,
       departure: this.creatingForm.value.departure,
-      // fixPrice: this.creatingForm.value.fixPrice,
-      // minPrice: this.creatingForm.value.minPrice,
-      // maxPrice: this.creatingForm.value.maxPrice,
+      priceFixed: this.creatingForm.value.fixPrice ? 1 : 0,
+      priceMin: this.creatingForm.value.minPrice,
+      priceMax: this.creatingForm.value.maxPrice,
     }
   }
 
