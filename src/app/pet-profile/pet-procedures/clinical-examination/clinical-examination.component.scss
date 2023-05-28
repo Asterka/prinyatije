@@ -1,0 +1,29 @@
+.card-activity {
+  box-shadow: -8px -6px 15px #ffffff, 3px 3px 7px rgba(166, 173, 213, 0.4);
+  border-radius: 16px;
+
+  padding: 1rem;
+  margin: 1rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  &__header {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    color: #6c757d;
+  }
+
+  &__content {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.svg-class{
+  transform: scale(3);
+}
