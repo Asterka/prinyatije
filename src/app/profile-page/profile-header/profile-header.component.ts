@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { LoginService } from 'src/app/auth/services/login.service';
 import { UserDto, UserExecutorServiceDto } from 'src/app/openapi';
 import { UserService } from 'src/app/shared/services/user.service';
 
@@ -20,7 +22,7 @@ export class ProfileHeaderComponent implements OnInit {
     this._servive = service;
   };
 
-  constructor(public userService: UserService,) {
+  constructor(public userService: UserService, private loginService: LoginService, private router: Router) {
 
   }
 
@@ -38,5 +40,10 @@ export class ProfileHeaderComponent implements OnInit {
     this.userService.getUserbyId(this.service.user?.id as string).subscribe(user => {
       this.user = user;
     });
+  }
+
+  logout() {
+    this.loginService.removeTokenFromLocalStorage();
+    this.router.navigate(['login']);
   }
 }

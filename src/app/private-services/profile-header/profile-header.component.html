@@ -30,7 +30,8 @@
       </section>
       <section class="card__request w-full flex flex-column align-items-end">
         <div>
-          <button pButton class="p-button" label="Отправить заявку"></button>
+          <p-toast></p-toast>
+          <button pButton class="p-button" label="Отправить заявку" (click)="sendRequest(service.id)"></button>
         </div>
         <div class="text-bold text-base mt-4 text-right">Адрес исполнителя
           <br>
