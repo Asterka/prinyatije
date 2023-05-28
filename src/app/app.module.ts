@@ -19,12 +19,14 @@ import { RxStompService } from './shared/services/stomp.service';
 import { rxStompServiceFactory } from './shared/services/stomp-factory-service';
 import { PetService } from './shared/services/pet.service';
 import { UserServicesService } from './shared/services/user-services.service';
-import { PersonalServicesListComponent } from './personal-services/personal-services-list/personal-services-list.component';
+import { StarsModule } from './shared/component/stars/stars.module';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     MainNavPageComponent,
-    PersonalServicesListComponent,
    ],
   imports: [
     CommonModule,
@@ -39,7 +41,8 @@ import { PersonalServicesListComponent } from './personal-services/personal-serv
     HttpClientModule,
     RegistrationModule,
     BrowserAnimationsModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    StarsModule,
   ],
   providers: [
     DialogService,

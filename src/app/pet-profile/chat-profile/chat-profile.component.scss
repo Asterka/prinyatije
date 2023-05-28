@@ -3,6 +3,7 @@
 .chat-main {
   width: 25vw;
   height: calc(100vh - 60px);
+  background-color: var(--bg-primary);
 
   @include devices(tablet) {
     display: none;

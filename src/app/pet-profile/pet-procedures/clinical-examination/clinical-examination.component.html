@@ -1,1 +1,72 @@
-<p>clinical-examination works!</p>
+<section style="height: 73vh; overflow: scroll">
+  <img src="./assets/activity-badge.svg" alt="Бейдж 'Дай лапку'!" />
+
+  <section class="mt-4 p-4">
+    <div style="max-height: 300px; overflow: scroll;" class="card-activity">
+      <span [innerHTML]="svgIcon" class="svg-class"></span>
+    </div>
+  </section>
+  <section class="mt-4 p-4">
+    <div class="card-activity">
+      <span class="flex align-items-center justify-content-between">
+        <h3>Прыг</h3>
+        <button
+          pButton
+          type="button"
+          class="p-button-sm p-button-text mt-2"
+          style="color: #8a61ff; font-weight: 700"
+          label="Изучить"
+          (click)="showTraining()"
+        >
+        </button>
+      </span>
+      <span class="flex flex-column mt-2">
+        <label class="label__header">Сроки обучения</label>
+        <h5 class="label__content">5-7 дней</h5>
+      </span>
+      <span class="flex flex-column mt-4">
+        <label class="label__header">Сложность</label>
+        <h5 class="label__content mt-2">
+          <star-rating [rating]="4"></star-rating>
+        </h5> </span
+      ><span class="flex flex-column mt-5">
+        <label class="label__header">Польза</label>
+        <h5 class="label__content">Позвать котика к себе на диван. Попросить спрыгнуть со шкафа или другого труднодоступного места.</h5>
+      </span>
+      <span class="flex flex-column mt-5">
+        <label class="label__header">Как выучить</label>
+        <h5 class="label__content">Вести котика за вкусняшкой. Постукивая вкусняшкой то место, на которое хотите, чтобы забрался питомец. Увеличивать «удаленность» этого места от питомца, но при этом соблюдая небольшое расстояние свое от кота. Начать можно с тех мест, на которые котенок сам уже умеет забираться. Дальше увеличивая труднодоступность места. От любимого дивана до запрыгивания на шкаф. Хвалить за каждый успех.</h5>
+      </span>
+    </div>
+  </section>
+
+  <section class="mt-4 p-4">
+    <div class="card-activity">
+      <span class="flex align-items-center justify-content-between">
+        <h3>Зайка</h3>
+        <button
+          pButton
+          type="button"
+          class="p-button-sm p-button-text mt-2"
+          style="color: #8a61ff; font-weight: 700"
+        >
+          на изучении
+        </button>
+      </span>
+      <span class="flex flex-column mt-2">
+        <label class="label__header">Сроки обучения</label>
+        <h5 class="label__content">2-3 недели. У некоторых питомцев может и не получиться по физиологическим причинам.</h5>
+      </span>
+      <span class="flex flex-column mt-4">
+        <label class="label__header">Сложность</label>
+        <h5 class="label__content mt-2">
+          <star-rating [rating]="4"></star-rating>
+        </h5> </span
+      >
+      <span class="flex flex-column mt-5">
+        <label class="label__header">Как выучить</label>
+        <h5 class="label__content">Котейка начнет садиться в такую позу очень часто, что достаточно забавно. Полезно для самого животного с точки зрения управления телом и его балансом. Помогает увеличить обзор перед запрыгиванием.</h5>
+      </span>
+    </div>
+  </section>
+</section>
