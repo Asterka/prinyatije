@@ -14,6 +14,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
 import { ProfileHeaderComponent } from './profile-header/profile-header.component';
 import { GTMTemplate } from './shared/directives/template-directive';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   imports: [
@@ -25,7 +27,8 @@ import { GTMTemplate } from './shared/directives/template-directive';
     RouterModule,
     PrivateServicesRoutingModule,
     InputTextareaModule,
-    ButtonModule
+    ButtonModule,
+    ToastModule
   ],
   declarations: [
     PrivateServicesComponent,
@@ -35,6 +38,7 @@ import { GTMTemplate } from './shared/directives/template-directive';
     ChatMessagesComponent,
     GTMTemplate,
     ProfileHeaderComponent
-  ]
+  ],
+  providers: [MessageService]
 })
 export class PrivateServicesModule { }
