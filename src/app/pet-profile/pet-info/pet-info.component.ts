@@ -47,4 +47,12 @@ export class PetInfoComponent implements OnInit {
 
     return dayjs(dayjs(date)).fromNow(true);
   }
+
+  searchService(petType: string | undefined) {
+    this.router.navigate(['privateServices'], {
+      queryParams: {
+        petType,
+      }
+    });
+  }
 }

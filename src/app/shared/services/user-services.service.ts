@@ -21,4 +21,8 @@ export class UserServicesService {
   removeUserService(userServiceId: string) {
     return this.userServicesService._delete(userServiceId);
   }
+
+  getServicesByName(petType?: "DOG" | "CAT" | "PARROTS" | "HAMSTER" | "SNAKE", searchValue?: string) {
+    return this.userServicesService.search(petType, searchValue);
+  }
 }

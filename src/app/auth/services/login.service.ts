@@ -50,9 +50,7 @@ export class LoginService {
   }
 
   getUser() {
-    this.userService.getMe().subscribe((user: UserDto) => {
-      console.log(user)
-    });
+    return this.userService.getMe();
   }
 
 }
