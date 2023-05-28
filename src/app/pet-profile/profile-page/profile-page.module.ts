@@ -19,11 +19,12 @@ import { ClinicalExaminationComponent } from '../pet-procedures/clinical-examina
 import { SkeletonModule } from 'primeng/skeleton';
 import { TooltipModule } from 'primeng/tooltip';
 import { ChatMessagesComponent } from '../chat-profile/chat-messages-component/chat-messages/chat-messages.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { StarsModule } from 'src/app/shared/component/stars/stars.module';
 import { TrainModalComponent } from '../pet-procedures/clinical-examination/train-modal/train-modal.component';
-import { LottieModule } from 'ngx-lottie';
+import { TripPrepsComponent } from '../pet-procedures/trip-preps/trip-preps.component';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { LottieModule } from 'ngx-lottie';
     ChipInformationComponent,
     ClinicalExaminationComponent,
     ChatMessagesComponent,
-    TrainModalComponent
+    TrainModalComponent,
+    TripPrepsComponent,
   ],
   imports: [
     CommonModule,
@@ -50,8 +52,10 @@ import { LottieModule } from 'ngx-lottie';
     SkeletonModule,
     TooltipModule,
     FormsModule,
+    ReactiveFormsModule,
     InputTextareaModule,
     StarsModule,
+    CheckboxModule
   ],
   exports: [
     ProfilePageComponent,

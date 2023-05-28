@@ -1,0 +1,16 @@
+.checkbox-label{
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+:host::ng-deep{
+  .p-checkbox-box.p-highlight{
+    background-color: #8a61ff;
+    border-color: #8a61ff;
+  }
+  .p-checkbox-box:not(.p-highlight){
+    box-shadow: inset -4px 4px 8px #dbdbdb,
+                    inset 4px -4px 8px #ffffff;
+  }
+}
