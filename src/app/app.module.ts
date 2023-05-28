@@ -19,9 +19,7 @@ import { RxStompService } from './shared/services/stomp.service';
 import { rxStompServiceFactory } from './shared/services/stomp-factory-service';
 import { PetService } from './shared/services/pet.service';
 import { UserServicesService } from './shared/services/user-services.service';
-import { PrivateServicesModule } from './private-services/private-services.module';
 import { UserService } from './shared/services/user.service';
-import { GTMTemplate } from './profile-page/shared/directives/template-directive';
 import { StarsModule } from './shared/component/stars/stars.module';
 @NgModule({
   declarations: [

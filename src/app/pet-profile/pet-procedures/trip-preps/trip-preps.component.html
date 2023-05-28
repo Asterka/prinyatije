@@ -1,0 +1,94 @@
+<section style="height: 73vh; overflow: scroll">
+  <form
+    class="flex flex-column lign-items-center mt-5"
+    style="gap: 1.5rem"
+    [formGroup]="this.form"
+  >
+    <section>
+      <p-checkbox
+        formControlName="country"
+        value="New York"
+        inputId="ny"
+      ></p-checkbox>
+      <label class="checkbox-label" for="ny"
+        >Узнать правила ввоза животного в страну назначения</label
+      >
+    </section>
+    <section>
+      <p-checkbox
+        formControlName="rules"
+        value="New York"
+        inputId="ny"
+      ></p-checkbox>
+      <label class="checkbox-label" for="ny">Поставить питомцу чип</label>
+    </section>
+    <section class="flex flex-column">
+      <span>
+        <p-checkbox
+          formControlName="country"
+          value="New York"
+          inputId="ny"
+        ></p-checkbox>
+        <label class="checkbox-label" for="ny"
+          >Сделать вакцинацию от бешенства</label
+        >
+      </span>
+      <span class="mt-4">
+        Дата введения вакцины против бешенства не должна предшествовать дате
+        вживления чипа. Если питомец уже был вакцинирован в текущем году, а
+        чипирование сделано только сейчас, прививку от бешенства необходимо
+        повторить. Правило не так критично для поездки в Таиланд, однако если
+        ваш путь лежит дальше этой страны, позаботьтесь о повторной вакцинации
+        после вживления чипа.
+      </span>
+      <span>
+        <button
+          pButton
+          type="button"
+          class="p-button-sm p-button-text mt-2 ml-4"
+          style="color: #8a61ff; font-weight: 700"
+        >
+          Просмотреть пункты
+        </button>
+      </span>
+    </section>
+    <section class="flex flex-column">
+      <span>
+        <p-checkbox
+          formControlName="country"
+          value="New York"
+          inputId="ny"
+        ></p-checkbox>
+        <label class="checkbox-label" for="ny"
+          >Сделать сделать комплексную вакцинацию</label
+        >
+      </span>
+      <span>
+        <button
+          pButton
+          type="button"
+          class="p-button-sm p-button-text mt-2 ml-4"
+          style="color: #8a61ff; font-weight: 700"
+        >
+          Просмотреть пункты
+        </button>
+      </span>
+    </section>
+    <section>
+      <p-checkbox
+        formControlName="country"
+        value="New York"
+        inputId="ny"
+      ></p-checkbox>
+      <label class="checkbox-label" for="ny"
+        >Получить в госветстанции ветеринарное свидетельство формы №1.</label
+      >
+      <span class="mt-4">
+        Действует справка 5 дней. Это значит, что приобрести ее необходимо перед
+        вылетом. В ветеринарной службе аэропорта свидетельство №1 обменяют на
+        ветсертификат формы №5а. Сертификат 5а за границей не спрашивают, он
+        нужен для возвращения домой.</span
+      >
+    </section>
+  </form>
+</section>
