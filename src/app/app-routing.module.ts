@@ -38,7 +38,7 @@ const routes: Routes = [
   {
     path: 'services',
     loadChildren: () =>
-      import('./services-page/services-page/services-page.module').then(
+      import('./personal-services/profile-page/profile-page.module').then(
         (m) => m.ServicesPageModule
       ),
   },
@@ -48,7 +48,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'profile',
   },
 ];
 

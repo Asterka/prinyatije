@@ -1,0 +1,20 @@
+.p-grid {
+  display: grid;
+  position: relative;
+  grid-template-columns: 63fr 25fr;
+}
+
+.main-section {
+  padding: 80px;
+  padding-top: 60px;
+  overflow: clip;
+}
+
+.main-page {
+  display: grid;
+  grid-template-rows: min-content auto;
+}
+
+.input-shadow-neo {
+  box-shadow: inset -4px 4px 8px #dbdbdb, inset 4px -4px 8px #ffffff;
+}

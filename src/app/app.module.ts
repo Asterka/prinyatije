@@ -22,6 +22,7 @@ import { UserServicesService } from './shared/services/user-services.service';
 import { PrivateServicesModule } from './private-services/private-services.module';
 import { UserService } from './shared/services/user.service';
 import { GTMTemplate } from './profile-page/shared/directives/template-directive';
+import { StarsModule } from './shared/component/stars/stars.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { GTMTemplate } from './profile-page/shared/directives/template-directive
     RegistrationModule,
     BrowserAnimationsModule,
     DynamicDialogModule,
+    StarsModule,
   ],
   providers: [
     DialogService,

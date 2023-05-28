@@ -1,0 +1,30 @@
+<div class="h-full w-100 message-block">
+  <div class="message-section" id="message-section">
+    <card *ngFor="let message of this.messages">
+      <ng-template petTemplate="body-template">
+        <span class="ellipsis">{{message?.['user']?.['name']}}</span>
+        <span class="ellipsis">{{message?.['value']}}</span>
+      </ng-template>
+    </card>
+  </div>
+  <section class="write-message">
+    <textarea
+      rows="1"
+      cols="30"
+      pInputTextarea
+      id="textarea"
+      [(ngModel)]="textValue"
+      name="textValue"
+      class="form-control"
+    ></textarea>
+    <button
+      pButton
+      type="button"
+      class="p-button-sm p-button-outlined mt-2"
+      [disabled]="!textValue"
+      (click)="submit()"
+    >
+      Отправить
+    </button>
+  </section>
+</div>

@@ -1,5 +1,6 @@
 import { GTMTemplate } from './../shared/directives/template-directive';
 import { NgModule } from '@angular/core';
+import player from 'lottie-web/build/player/lottie_svg';
 import { CommonModule } from '@angular/common';
 import { ProfilePageComponent } from '../profile-page.component';
 import { ProfileRoutingModule } from './profile-routing.module';
@@ -20,6 +21,9 @@ import { TooltipModule } from 'primeng/tooltip';
 import { ChatMessagesComponent } from '../chat-profile/chat-messages-component/chat-messages/chat-messages.component';
 import { FormsModule } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { StarsModule } from 'src/app/shared/component/stars/stars.module';
+import { TrainModalComponent } from '../pet-procedures/clinical-examination/train-modal/train-modal.component';
+import { LottieModule } from 'ngx-lottie';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     ChipInformationComponent,
     ClinicalExaminationComponent,
     ChatMessagesComponent,
+    TrainModalComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +50,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     SkeletonModule,
     TooltipModule,
     FormsModule,
-    InputTextareaModule
+    InputTextareaModule,
+    StarsModule,
   ],
   exports: [
     ProfilePageComponent,
@@ -56,3 +62,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
   ],
 })
 export class PetProfilePageModule {}
+
+export function playerFactory() {
+  return player;
+}
