@@ -35,7 +35,7 @@ export class ChatFacadeService {
         let data = messagesArray.content;
         this._msgs = <Array<any>>data;
         this._msgs = this.orderByDate(this._msgs, 'createdAt');
-        this.messages$.next(data);
+        this.messages$.next(this._msgs);
       },
     });
   }
